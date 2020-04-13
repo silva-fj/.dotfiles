@@ -1,0 +1,19 @@
+{
+  "suggest.noselect": false,
+  "suggest.maxCompleteItemCount": 20,
+  "suggest.triggerAfterInsertEnter": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "json",
+    "graphql",
+    "css",
+    "Markdown"
+  ],
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•"
+}
