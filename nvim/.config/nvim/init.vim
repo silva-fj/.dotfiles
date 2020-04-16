@@ -69,6 +69,8 @@ set wildignore+=*/vendor/*
 " colorscheme nord
 " colorscheme dracula
 
+set background=dark
+
 " OceanicNext Theme
 colorscheme OceanicNext
 let g:airline_theme='oceanicnext'
@@ -77,7 +79,6 @@ let g:oceanic_next_terminal_italic = 1
 
 " Material Hybrid Theme
 " colorscheme hybrid_material
-" set background=dark
 " let g:airline_theme = 'hybrid'
 " #######################################
 
