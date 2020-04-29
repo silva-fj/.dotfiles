@@ -29,13 +29,16 @@ Plug 'jparise/vim-graphql'
 Plug 'Valloric/MatchTagAlways'
 Plug 'tpope/vim-unimpaired'
 Plug 'mbbill/undotree'
+Plug 'vifm/vifm.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'mhinz/vim-startify'
+" ------------ Colorschemas ----------------
 " Plug 'morhetz/gruvbox'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'joshdick/onedark.vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
-Plug 'mhinz/vim-startify'
 call plug#end()
 
 syntax on
@@ -54,6 +57,15 @@ set splitbelow
 set splitright
 set mouse=a
 set clipboard=unnamed
+set shell=/bin/zsh
+set termguicolors
+set nobackup
+set nowritebackup
+set shortmess+=c
+set signcolumn=yes
+set hidden
+set cmdheight=2
+set updatetime=300
 
 " Ignore files/directories from autocomplete and fzf
 set wildignore+=*/tmp/*
@@ -63,13 +75,16 @@ set wildignore+=*/node_modules/*
 set wildignore+=*/vendor/bundle/*
 set wildignore+=*/vendor/*
 
-" [ Color Schemes ]
+" Enable true colors and termguicolors 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" [ Color Schemes - Themes ]
+set background=dark
+
 " colorscheme onedark
 " colorscheme gruvbox
 " colorscheme nord
 " colorscheme dracula
-
-set background=dark
 
 " OceanicNext Theme
 colorscheme OceanicNext
@@ -91,14 +106,15 @@ let g:javascript_plugin_ngdoc = 1
 map <Space> <Leader>
 map <Leader>bc :BCommits!<CR>
 map <Leader>glg :Commits!<CR>
-nmap glg :GFiles!?<CR>
+map <C-f> :NERDTreeToggle<CR>
 map <Leader>gs :Gstatus<CR>
-nnoremap <C-p> :Files<CR>
 map <Leader>qq :qall<CR>
-nmap gb <C-o>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
+nmap glg :GFiles!?<CR>
 nnoremap <space><space> :nohlsearch<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>rt :JSXReplaceTag<CR>
 nnoremap <C-m> :NERDTreeFind<CR>
 nnoremap <F10> :bnext<CR>
@@ -111,6 +127,8 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <space>s :w<CR>
+nnoremap <space>F :Vifm.<CR>
+
 
 "Neovim Terminal Configuration
 if has('nvim')
@@ -139,27 +157,11 @@ let g:startify_bookmarks = [
     \ {'v': '~/.config/nvim/coc-settings.json'}, 
     \ {'t': '~/.zshrc'},
     \ ]
-" ################################################################################################################################
 
 " NERDTree Configuration
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-  set termguicolors
-endif
-
-"opens NERDTree automatically when vim starts up on opening a directory e.g: vim ~/some-directory
+" opens NERDTree automatically when vim starts up on opening a directory e.g: vim ~/some-directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-"closes vim if the only window left open is a NERDTree
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.vagrant$', '\.dependabot$']
 let g:NERDTreeShowHidden=1
@@ -169,12 +171,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeRespectWildIgnore = 1
 
-"open NERDTree shortcut
-map <C-f> :NERDTreeToggle<CR>
-" ###################################################################################################################################
-
 " NerdCommenter Configuration
-
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
@@ -186,10 +183,6 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
-" ##################################################################################################################################
-
 " NerdCommenter configuration
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDCommentEmptyLines = 1
@@ -200,7 +193,6 @@ function! s:fcy_nerdcommenter_map()
     nmap <leader>cc <plug>NERDCommenterToggle
     vmap <leader>cc <plug>NERDCommenterToggle gv
 endfunction
-" ###################################################################################################################
 
 " MatchTagAlways configuration
 let g:mta_filetypes = {
@@ -211,8 +203,6 @@ let g:mta_filetypes = {
   \ 'xml' : 1,
   \ 'jinja' : 1,
   \}
-
-" ###################################################
 
 "COC configuration:
 let g:coc_global_extensions = [
@@ -230,25 +220,6 @@ let g:coc_global_extensions = [
   \ 'coc-yaml', 
   \ 'coc-lists', 
   \ ]
-
-set nobackup
-set nowritebackup
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -329,7 +300,7 @@ nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
-"nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
@@ -348,7 +319,6 @@ function! s:select_current_word()
   endif
   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 endfunc
-" #####################################################################################################
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -361,7 +331,6 @@ let airline#extensions#coc#warning_symbol = 'Warning:'
 let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
 let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 let g:airline_powerline_fonts = 1
-" ######################################################################################################
 
 " vim-closetag
 let g:closetag_xhtml_filetypes = 'xhtml,javascript.jsx,jsx,tsx'
@@ -374,8 +343,6 @@ autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.ts set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-" ######################################################################################################
-"
-" " Open Browser Configuration
-nnoremap <A-o> <Plug>(openbrowser-open)
-nnoremap <A-o> <Plug>(openbrowser-open)
+
+" CocoaPods
+au BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
