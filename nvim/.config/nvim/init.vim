@@ -2,9 +2,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
@@ -107,31 +107,40 @@ let g:javascript_plugin_ngdoc = 1
 map <Space> <Leader>
 map <Leader>bc :BCommits!<CR>
 map <Leader>glg :Commits!<CR>
-map <C-f> :NERDTreeToggle<CR>
+" map <C-f> :NERDTreeToggle<CR>
 map <Leader>gs :Gstatus<CR>
+map <leader>b :Buffers<CR>
 map <Leader>qq :qall<CR>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
 nmap glg :GFiles!?<CR>
+nmap <space>e :CocCommand explorer<CR>
 nnoremap <space><space> :nohlsearch<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>rt :JSXReplaceTag<CR>
-nnoremap <C-m> :NERDTreeFind<CR>
+" nnoremap <C-m> :NERDTreeFind<CR>
 nnoremap <F10> :bnext<CR>
 nnoremap <F9> :bprev<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
+nnoremap <Leader>u :UndotreeToggle<CR>
+nnoremap <space>s :w<CR>
+nnoremap <space>F :Vifm<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>t :Tags<CR>
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
-nnoremap <Leader>u :UndotreeToggle<CR>
-nnoremap <space>s :w<CR>
-nnoremap <space>F :Vifm<CR>
-map <leader>b :Buffers<CR>
-nnoremap <leader>g :Rg<CR>
-nnoremap <leader>t :Tags<CR>
+
+" Coc Explorer Configuration
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+let g:coc_explorer_global_presets = {
+\   'floating': {
+\      'position': 'floating',
+\   },
+\ }
 
 " FZF Configuration
 let g:fzf_action = {
@@ -141,8 +150,9 @@ let g:fzf_action = {
 
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+let $BAT_THEME = 'Oceanic Next'
 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Keyword' } }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -217,16 +227,16 @@ let g:startify_bookmarks = [
 
 " NERDTree Configuration
 " opens NERDTree automatically when vim starts up on opening a directory e.g: vim ~/some-directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-let g:NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.vagrant$', '\.dependabot$']
-let g:NERDTreeShowHidden=1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:NERDTreeGitStatusWithFlags = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:NERDTreeGitStatusNodeColorization = 1
-let g:NERDTreeRespectWildIgnore = 1
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+"
+" let g:NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.vagrant$', '\.dependabot$']
+" let g:NERDTreeShowHidden=1
+" let g:DevIconsEnableFoldersOpenClose = 1
+" let g:NERDTreeGitStatusWithFlags = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:NERDTreeGitStatusNodeColorization = 1
+" let g:NERDTreeRespectWildIgnore = 1
 
 " NerdCommenter Configuration
 " Add spaces after comment delimiters by default
@@ -265,6 +275,7 @@ let g:coc_global_extensions = [
   \ 'coc-css', 
   \ 'coc-yaml', 
   \ 'coc-lists', 
+  \ 'coc-explorer', 
   \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -344,7 +355,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Show all diagnostics.
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <space>E  :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent> <space>C  :<C-u>CocList commands<cr>
 " Find symbol of current document.
