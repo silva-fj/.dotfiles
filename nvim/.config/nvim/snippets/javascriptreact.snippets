@@ -1,0 +1,59 @@
+extends javascript
+
+# Imports
+snippet imr "import React" 
+import React from 'react'$0
+endsnippet
+
+snippet imrn "import React Native"
+import { ${1:moduleName} } from 'react-native'
+endsnippet
+
+# Hooks
+snippet ush "React useState hook" 
+const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = React.useState(${2:initialState})$0
+endsnippet
+
+snippet uch "React useContext hook"
+const {$2:contextValue} = React.useContext({$1:context})$0
+endsnippet
+
+snippet ueh "React useEffect hook" 
+React.useEffect(() => {
+	{$1:effect}
+}, [{$2:input}])$0
+endsnippet
+
+snippet ucbh "React useCallback hook" 
+const ${1:memoizedCallback} = React.useCallback(() => {
+	{$2:callback}
+}, [{$3:input}])$0
+endsnippet
+
+snippet urh "React useRef hook"
+const $1 = React.useRef($2)$0
+endsnippet
+
+snippet umh "React useMemo hook"
+const ${1:memoizedValue} = useMemo(() => ${2:function}, [{$3:input}])$0
+endsnippet
+
+snippet urdh "React useReducer hook"
+const [${1: state}, ${2:dispatch}] = React.useReducer(reducer, initialState)$0
+endsnippet
+
+snippet urdhi "React useReducer hook with init" 
+const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})
+endsnippet
+
+# utils
+snippet reducer "Reducer for useReducer"
+const reducer = (state, action) => {
+	switch (action.type) {
+		case ${1: action_type}:
+			$2
+		default:
+			return state
+	}
+}
+endsnippet

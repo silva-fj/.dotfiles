@@ -2,16 +2,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-" Plug 'preservim/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/yajs.vim'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -107,19 +106,18 @@ let g:javascript_plugin_ngdoc = 1
 map <Space> <Leader>
 map <Leader>bc :BCommits!<CR>
 map <Leader>glg :Commits!<CR>
-" map <C-f> :NERDTreeToggle<CR>
+map <space>e :NERDTreeToggle<CR>
 map <Leader>gs :Gstatus<CR>
 map <leader>b :Buffers<CR>
 map <Leader>qq :qall<CR>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
 nmap glg :GFiles!?<CR>
-nmap <space>e :CocCommand explorer<CR>
 nnoremap <space><space> :nohlsearch<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>rt :JSXReplaceTag<CR>
-" nnoremap <C-m> :NERDTreeFind<CR>
+nnoremap <space>m :NERDTreeFind<CR>
 nnoremap <F10> :bnext<CR>
 nnoremap <F9> :bprev<CR>
 nnoremap <A-j> :m .+1<CR>==
@@ -135,12 +133,12 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Coc Explorer Configuration
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-let g:coc_explorer_global_presets = {
-\   'floating': {
-\      'position': 'floating',
-\   },
-\ }
+" autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+" let g:coc_explorer_global_presets = {
+" \   'floating': {
+" \      'position': 'floating',
+" \   },
+" \ }
 
 " FZF Configuration
 let g:fzf_action = {
@@ -150,52 +148,6 @@ let g:fzf_action = {
 
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $BAT_THEME = 'Oceanic Next'
-
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Keyword' } }
-
-" Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
-"Get Files
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-
-" Get text in files with Rg
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
-
-" Ripgrep advanced
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-endfunction
-
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-
-" Git grep
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep(
-  \   'git grep --line-number '.shellescape(<q-args>), 0,
-  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
 "Neovim Terminal Configuration
 if has('nvim')
@@ -227,16 +179,16 @@ let g:startify_bookmarks = [
 
 " NERDTree Configuration
 " opens NERDTree automatically when vim starts up on opening a directory e.g: vim ~/some-directory
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-"
-" let g:NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.vagrant$', '\.dependabot$']
-" let g:NERDTreeShowHidden=1
-" let g:DevIconsEnableFoldersOpenClose = 1
-" let g:NERDTreeGitStatusWithFlags = 1
-" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" let g:NERDTreeGitStatusNodeColorization = 1
-" let g:NERDTreeRespectWildIgnore = 1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+let g:NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.vagrant$', '\.dependabot$']
+let g:NERDTreeShowHidden=1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:NERDTreeGitStatusWithFlags = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:NERDTreeGitStatusNodeColorization = 1
+let g:NERDTreeRespectWildIgnore = 1
 
 " NerdCommenter Configuration
 " Add spaces after comment delimiters by default
@@ -275,7 +227,6 @@ let g:coc_global_extensions = [
   \ 'coc-css', 
   \ 'coc-yaml', 
   \ 'coc-lists', 
-  \ 'coc-explorer', 
   \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -376,6 +327,13 @@ function! s:select_current_word()
   endif
   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 endfunc
+
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>A :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>A :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1

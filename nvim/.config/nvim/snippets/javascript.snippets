@@ -1,0 +1,127 @@
+snippet cl "console.log()"
+console.log(${0:${VISUAL}})
+endsnippet
+
+snippet switch "switch conditional"
+switch (${1:expression}) {
+	case '${3:case}':
+		${4}
+		break;
+	${0}
+	default:
+		${2}
+}
+endsnippet
+
+snippet case "case 'xyz': ... break"
+case '${1:case}':
+${0:${VISUAL}}
+break;
+endsnippet
+
+snippet if "if (condition) { ... }"
+if (${1:true}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ife "if (condition) { ... } else { ... }"
+if (${1:true}) {
+	${0:${VISUAL}}
+} else {
+	${2}
+}
+endsnippet
+
+snippet try "try { ... } catch(e) { ... }"
+try {
+	${0:${VISUAL}}
+} catch (${1:e}) {
+	${2:/* handle error */}
+}
+endsnippet
+
+snippet tryf "try { ... } catch(e) { ... } finally { ... }"
+try {
+	${0:${VISUAL}}
+} catch (${1:e}) {
+	${2:/* handle error */}
+} finally {
+	${3:/* be executed regardless of the try / catch result*/}
+}
+endsnippet
+
+snippet terr "Throw new Error"
+throw new Error('${1:error message}')
+endsnippet
+
+snippet /** "doc string"
+/**
+ * ${0:description}
+ *
+ */
+endsnippet
+
+snippet const "const"
+const ${1} = ${0}
+endsnippet
+
+snippet let "let"
+let ${1} = ${0}
+endsnippet
+
+snippet im "import xyz from 'xyz'"
+import ${1} from '${2:$1}'
+endsnippet
+
+snippet ime "import * as xyz from 'xyz'"
+import * as ${1} from '${2:$1}'
+endsnippet
+
+snippet imnas "import { original as alias } from 'module'" 
+import { ${1:originalName} as ${2:alias} } from '${3:module}'
+endsnippet
+
+snippet imn "import { member } from 'xyz'"
+import { ${1} } from '${2}'
+endsnippet
+
+snippet constf "const function"
+const ${1:function_name} = (${2:params}) => {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet enf "export named function"
+export const ${1:function_name} = (${2:params}) => {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet constaf "const async function"
+const ${1:function_name} = async (${2}) => {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet anf "Anonymous function"
+(${1:params}) => {
+	${2}
+}
+endsnippet
+
+snippet dob "const object destructuring"
+const {${1:property_name}} = ${2:object_to_destruct}
+endsnippet
+
+snippet dar "cont array destructuring"
+const [${1:property_name}] = ${2:array_to_destruct}
+endsnippet
+
+snippet aw "await" 
+await ${0:{VISUAL}}
+endsnippet
+
+snippet jsons "JSON.stringify"
+JSON.stringify(${0:object})
+endsnippet

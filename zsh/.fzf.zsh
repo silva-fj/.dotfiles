@@ -5,7 +5,6 @@ if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
 fi
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --theme='Oceanic Next' --color=always --style=header,grid --line-range :300 {}'"
 
 # Auto-completion
 # ---------------
