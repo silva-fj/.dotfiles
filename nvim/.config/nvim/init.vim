@@ -2,9 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
@@ -106,10 +103,10 @@ let g:javascript_plugin_ngdoc = 1
 map <Space> <Leader>
 map <Leader>bc :BCommits!<CR>
 map <Leader>glg :Commits!<CR>
-map <space>e :NERDTreeToggle<CR>
 map <Leader>gs :Gstatus<CR>
 map <leader>b :Buffers<CR>
 map <Leader>qq :qall<CR>
+nmap <space>e :CocCommand explorer<CR>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
 nmap glg :GFiles!?<CR>
@@ -117,7 +114,6 @@ nnoremap <space><space> :nohlsearch<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>rt :JSXReplaceTag<CR>
-nnoremap <space>m :NERDTreeFind<CR>
 nnoremap <F10> :bnext<CR>
 nnoremap <F9> :bprev<CR>
 nnoremap <A-j> :m .+1<CR>==
@@ -133,12 +129,7 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Coc Explorer Configuration
-" autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-" let g:coc_explorer_global_presets = {
-" \   'floating': {
-" \      'position': 'floating',
-" \   },
-" \ }
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " FZF Configuration
 let g:fzf_action = {
@@ -176,19 +167,6 @@ let g:startify_bookmarks = [
     \ {'v': '~/.config/nvim/coc-settings.json'}, 
     \ {'t': '~/.zshrc'},
     \ ]
-
-" NERDTree Configuration
-" opens NERDTree automatically when vim starts up on opening a directory e.g: vim ~/some-directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-let g:NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.vagrant$', '\.dependabot$']
-let g:NERDTreeShowHidden=1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:NERDTreeGitStatusWithFlags = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:NERDTreeGitStatusNodeColorization = 1
-let g:NERDTreeRespectWildIgnore = 1
 
 " NerdCommenter Configuration
 " Add spaces after comment delimiters by default
