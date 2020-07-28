@@ -7,7 +7,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/yajs.vim'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -34,7 +33,6 @@ Plug 'mhinz/vim-startify'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'joshdick/onedark.vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 call plug#end()
 
@@ -88,11 +86,7 @@ colorscheme OceanicNext
 let g:airline_theme='oceanicnext'
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-
-" Material Hybrid Theme
-" colorscheme hybrid_material
-" let g:airline_theme = 'hybrid'
-" #######################################
+" ----------------------------------------
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
@@ -228,7 +222,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " inoremap <expr> <cr> pumvisible() ? '\<C-y>' : '\<C-g>u\<CR>'
+  inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
