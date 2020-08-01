@@ -2,6 +2,7 @@
   "suggest.noselect": false,
   "suggest.maxCompleteItemCount": 20,
   "suggest.triggerAfterInsertEnter": true,
+  "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "javascriptreact",
