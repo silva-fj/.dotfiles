@@ -25,15 +25,18 @@ Plug 'jparise/vim-graphql'
 Plug 'Valloric/MatchTagAlways'
 Plug 'tpope/vim-unimpaired'
 Plug 'mbbill/undotree'
-Plug 'vifm/vifm.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'mhinz/vim-startify'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'liuchengxu/vim-which-key'
+Plug 'udalov/kotlin-vim'
 " ------------ Colorschemas ----------------
 " Plug 'morhetz/gruvbox'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'joshdick/onedark.vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'
+" Plug 'haishanh/night-owl.vim'
 call plug#end()
 
 syntax on
@@ -80,6 +83,7 @@ set background=dark
 " colorscheme gruvbox
 " colorscheme nord
 " colorscheme dracula
+" colorscheme night-owl
 
 " OceanicNext Theme
 colorscheme OceanicNext
@@ -100,6 +104,8 @@ map <Leader>glg :Commits!<CR>
 map <Leader>gs :Gstatus<CR>
 map <leader>b :Buffers<CR>
 map <Leader>qq :qall<CR>
+xmap <leader>r  <Plug>(coc-codeaction-selected)
+nmap <leader>r  <Plug>(coc-codeaction-selected)
 nmap <space>e :CocCommand explorer<CR>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
@@ -114,13 +120,37 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <space>s :w<CR>
-nnoremap <space>F :Vifm<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+
+" Dart language
+let g:dart_style_guide = 2
+
+" WhichKey Configuration
+set timeoutlen=500
+let g:which_key_map =  {}
+let g:which_key_sep = '→' 
+let g:which_key_use_floating_win = 0
+let g:which_key_map.f = {
+      \ 'name' : '+Flutter Commands' ,
+      \ 'r' : [':CocCommand flutter.run', 'Run Flutter'],
+      \ 'a' : [':CocCommand flutter.attach', 'Attach running app'],
+      \ 'u' : [':CocCommand flutter.pub.get', 'Update dependencies (pub get)'],
+      \ 'o' : [':CocCommand flutter.devices', 'Open devices list'],
+      \ 'e' : [':CocCommand flutter.emulators', 'Open emulators list'],
+      \ 'R' : [':CocCommand flutter.dev.hotRestart', 'Hot restart'],
+      \ 'l' : [':CocCommand flutter.dev.openDevLog', 'Open flutter dev log server'],
+      \ 'd' : [':CocCommand flutter.dev.openDevToolsProfiler', 'Open devtools debugger'],
+      \ 's' : [':CocCommand flutter.dev.screenshot', 'To save a screenshot to flutter.png'],
+      \ 'q' : [':CocCommand flutter.dev.quit', 'Quit server'],
+      \ }
+call which_key#register('<Space>', "g:which_key_map")
 
 " Coc Explorer Configuration
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
@@ -131,6 +161,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+let g:fzf_preview_window = ''
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 
@@ -199,6 +230,7 @@ let g:coc_global_extensions = [
   \ 'coc-css', 
   \ 'coc-yaml', 
   \ 'coc-lists', 
+  \ 'coc-flutter', 
   \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -348,3 +380,6 @@ autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " CocoaPods
 au BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
+
+" JenkinsFile
+au BufNewFile,BufRead Jenkinsfile set filetype=groovy

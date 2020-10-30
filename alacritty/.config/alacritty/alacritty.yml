@@ -1,8 +1,8 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 window:
   dimensions:
-    columns: 205
-    lines: 65
+    columns: 180
+    lines: 60
 
 # Font configuration
 font:

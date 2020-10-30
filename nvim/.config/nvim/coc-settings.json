@@ -12,7 +12,8 @@
     "json",
     "graphql",
     "css",
-    "Markdown"
+    "Markdown",
+    "dart"
   ],
   "diagnostic.errorSign": "⨯",
   "diagnostic.warningSign": "⚠",
