@@ -31,12 +31,12 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'liuchengxu/vim-which-key'
 Plug 'udalov/kotlin-vim'
 " ------------ Colorschemas ----------------
-" Plug 'morhetz/gruvbox'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'
-" Plug 'haishanh/night-owl.vim'
+Plug 'haishanh/night-owl.vim'
 call plug#end()
 
 syntax on
@@ -100,18 +100,19 @@ let g:javascript_plugin_ngdoc = 1
 " Key Mappings
 map <Space> <Leader>
 map <Leader>bc :BCommits!<CR>
-map <Leader>glg :Commits!<CR>
+map <Leader>glg :CocCommand fzf-preview.GitLogs<CR>
 map <Leader>gs :Gstatus<CR>
-map <leader>b :Buffers<CR>
+map <leader>b :CocCommand fzf-preview.Buffers<CR>
+map <leader>m :CocCommand fzf-preview.ProjectMruFiles<CR>
+map <leader>ga :CocCommand fzf-preview.GitActions<CR>
 map <Leader>qq :qall<CR>
 xmap <leader>r  <Plug>(coc-codeaction-selected)
 nmap <leader>r  <Plug>(coc-codeaction-selected)
 nmap <space>e :CocCommand explorer<CR>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
-nmap glg :GFiles!?<CR>
 nnoremap <space><space> :nohlsearch<CR>
-nnoremap <C-p> :Files<CR>
+nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>rt :JSXReplaceTag<CR>
 nnoremap <F10> :bnext<CR>
@@ -149,6 +150,7 @@ let g:which_key_map.f = {
       \ 'd' : [':CocCommand flutter.dev.openDevToolsProfiler', 'Open devtools debugger'],
       \ 's' : [':CocCommand flutter.dev.screenshot', 'To save a screenshot to flutter.png'],
       \ 'q' : [':CocCommand flutter.dev.quit', 'Quit server'],
+      \ 'p' : [':CocCommand flutter.dev.openProfiler', 'Open observatory debugger and profiler web page'],
       \ }
 call which_key#register('<Space>', "g:which_key_map")
 
@@ -161,9 +163,19 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-let g:fzf_preview_window = ''
+" let g:fzf_preview_window = ''
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+
+augroup fzf_preview
+  autocmd!
+  autocmd User fzf_preview#rpc#initialized call s:fzf_preview_settings() " fzf_preview#remote#initialized or fzf_preview#coc#initialized
+augroup END
+
+function! s:fzf_preview_settings() abort
+  let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
+  let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
+endfunction
 
 "Neovim Terminal Configuration
 if has('nvim')
