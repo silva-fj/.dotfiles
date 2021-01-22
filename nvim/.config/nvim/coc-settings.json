@@ -24,5 +24,9 @@
   "explorer.keyMappings": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "typescript",
+    "typescriptreact": "typescript"
   }
 }
