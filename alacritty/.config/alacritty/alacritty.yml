@@ -307,6 +307,8 @@ key_bindings:
   - { key: Q,               mods: Control,        chars: "\x11"                        }
   - { key: P,               mods: Command,        chars: ":Telescope find_files\n"     } # Neovim command
   - { key: F,               mods: Command|Shift,  chars: ":Ag\n"                       } # Neovim command
+  - { key: Key0,               mods: Command,        chars: ":bnext\n"                    } # Neovim command
+  - { key: Key9,               mods: Command,        chars: ":bprev\n"                    } # Neovim command
 
 #key_bindings:
   #- { key: Paste,                                action: Paste          }
