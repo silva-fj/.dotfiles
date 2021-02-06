@@ -30,13 +30,16 @@ Plug 'mhinz/vim-startify'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'liuchengxu/vim-which-key'
 Plug 'udalov/kotlin-vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 " ------------ Colorschemas ----------------
 Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
-Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'mhartington/oceanic-next'
-Plug 'haishanh/night-owl.vim'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'joshdick/onedark.vim'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'mhartington/oceanic-next'
+" Plug 'haishanh/night-owl.vim'
 call plug#end()
 
 syntax on
@@ -80,16 +83,16 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 
 " colorscheme onedark
-" colorscheme gruvbox
+colorscheme gruvbox
 " colorscheme nord
 " colorscheme dracula
 " colorscheme night-owl
 
 " OceanicNext Theme
-colorscheme OceanicNext
-let g:airline_theme='oceanicnext'
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
+" let g:airline_theme='oceanicnext'
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
 " ----------------------------------------
 
 let g:enable_bold_font = 1
@@ -121,7 +124,7 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <space>s :w<CR>
-nnoremap <leader>g :Rg<CR>
+nnoremap <leader>g :Telescope live_grep<CR>
 nnoremap <leader>t :Tags<CR>
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
@@ -201,7 +204,7 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [ 
     \ {'c': '~/.config/nvim/init.vim'}, 
-    \ {'v': '~/.config/nvim/coc-settings.json'}, 
+    \ {'s': '~/.config/nvim/coc-settings.json'}, 
     \ {'t': '~/.zshrc'},
     \ ]
 
