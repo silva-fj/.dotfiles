@@ -305,7 +305,7 @@ key_bindings:
   - { key: Equals,          mods: Control,        action: IncreaseFontSize             }
   - { key: NumpadSubtract,  mods: Control,        action: DecreaseFontSize             }
   - { key: Q,               mods: Control,        chars: "\x11"                        }
-  - { key: P,               mods: Command,        chars: ":CocCommand fzf-preview.GitFiles\n"                   } # Neovim command
+  - { key: P,               mods: Command,        chars: ":Telescope find_files\n"     } # Neovim command
   - { key: F,               mods: Command|Shift,  chars: ":Ag\n"                       } # Neovim command
 
 #key_bindings:
