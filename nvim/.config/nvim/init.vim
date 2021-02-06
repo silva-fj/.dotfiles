@@ -167,15 +167,15 @@ let g:fzf_action = {
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 
-augroup fzf_preview
-  autocmd!
-  autocmd User fzf_preview#rpc#initialized call s:fzf_preview_settings() " fzf_preview#remote#initialized or fzf_preview#coc#initialized
-augroup END
-
-function! s:fzf_preview_settings() abort
-  let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
-  let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
-endfunction
+" augroup fzf_preview
+  " autocmd!
+  " autocmd User fzf_preview#rpc#initialized call s:fzf_preview_settings() " fzf_preview#remote#initialized or fzf_preview#coc#initialized
+" augroup END
+"
+" function! s:fzf_preview_settings() abort
+  " let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
+  " let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
+" endfunction
 
 "Neovim Terminal Configuration
 if has('nvim')
@@ -235,7 +235,6 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
-  \ 'coc-git', 
   \ 'coc-highlight', 
   \ 'coc-phpls', 
   \ 'coc-html', 
