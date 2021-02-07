@@ -1,3 +1,42 @@
+syntax on
+set autoread
+set smarttab
+set cindent
+set autowrite
+set wildmenu
+set si
+set scrolloff=5
+set expandtab shiftwidth=4 tabstop=4
+set smartindent
+set number
+set relativenumber
+set splitbelow
+set splitright
+set mouse=a
+set clipboard=unnamed
+set shell=/bin/zsh
+set termguicolors
+set nobackup
+set nowritebackup
+set shortmess+=c
+set signcolumn=yes
+set hidden
+set cmdheight=2
+set updatetime=300
+set nohlsearch
+set noerrorbells
+set nowrap
+set background=dark
+
+" Ignore files/directories from autocomplete and fzf
+set wildignore+=*/tmp/*
+set wildignore+=*.so
+set wildignore+=*.zip
+set wildignore+=*/node_modules/*
+set wildignore+=*/vendor/bundle/*
+set wildignore+=*/vendor/*
+
+" Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
@@ -42,48 +81,12 @@ Plug 'morhetz/gruvbox'
 " Plug 'haishanh/night-owl.vim'
 call plug#end()
 
-syntax on
-set autoread
-set smarttab
-set cindent
-set autowrite
-set wildmenu
-set si
-set scrolloff=5
-set expandtab shiftwidth=4 tabstop=4
-set smartindent
-set number
-set relativenumber
-set splitbelow
-set splitright
-set mouse=a
-set clipboard=unnamed
-set shell=/bin/zsh
-set termguicolors
-set nobackup
-set nowritebackup
-set shortmess+=c
-set signcolumn=yes
-set hidden
-set cmdheight=2
-set updatetime=300
-
-" Ignore files/directories from autocomplete and fzf
-set wildignore+=*/tmp/*
-set wildignore+=*.so
-set wildignore+=*.zip
-set wildignore+=*/node_modules/*
-set wildignore+=*/vendor/bundle/*
-set wildignore+=*/vendor/*
-
 " Enable true colors and termguicolors 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " [ Color Schemes - Themes ]
-set background=dark
-
-" colorscheme onedark
 colorscheme gruvbox
+" colorscheme onedark
 " colorscheme nord
 " colorscheme dracula
 " colorscheme night-owl
@@ -93,7 +96,6 @@ colorscheme gruvbox
 " let g:airline_theme='oceanicnext'
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
-" ----------------------------------------
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
@@ -114,7 +116,6 @@ nmap <leader>r  <Plug>(coc-codeaction-selected)
 nmap <space>e :CocCommand explorer<CR>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
-nnoremap <space><space> :nohlsearch<CR>
 nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>rt :JSXReplaceTag<CR>
@@ -131,7 +132,6 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-
 
 " Dart language
 let g:dart_style_guide = 2
@@ -169,16 +169,6 @@ let g:fzf_action = {
 " let g:fzf_preview_window = ''
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-
-" augroup fzf_preview
-  " autocmd!
-  " autocmd User fzf_preview#rpc#initialized call s:fzf_preview_settings() " fzf_preview#remote#initialized or fzf_preview#coc#initialized
-" augroup END
-"
-" function! s:fzf_preview_settings() abort
-  " let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
-  " let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
-" endfunction
 
 "Neovim Terminal Configuration
 if has('nvim')
@@ -353,13 +343,13 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-nmap <expr> <silent> <C-d> <SID>select_current_word()
-function! s:select_current_word()
-  if !get(g:, 'coc_cursors_activated', 0)
-    return "\<Plug>(coc-cursors-word)"
-  endif
-  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
-endfunc
+" nmap <expr> <silent> <C-d> <SID>select_current_word()
+" function! s:select_current_word()
+  " if !get(g:, 'coc_cursors_activated', 0)
+    " return "\<Plug>(coc-cursors-word)"
+  " endif
+  " return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+" endfunc
 
 " Remap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
@@ -387,6 +377,7 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.tsx'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
+
 autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.ts set filetype=typescript.tsx
