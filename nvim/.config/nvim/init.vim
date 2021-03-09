@@ -25,7 +25,6 @@ set cmdheight=2
 set updatetime=300
 set nohlsearch
 set noerrorbells
-set nowrap
 set background=dark
 
 " Ignore files/directories from autocomplete and fzf
@@ -72,6 +71,8 @@ Plug 'udalov/kotlin-vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'tomlion/vim-solidity'
 " ------------ Colorschemas ----------------
 Plug 'morhetz/gruvbox'
 " Plug 'arcticicestudio/nord-vim'
@@ -104,9 +105,9 @@ let g:javascript_plugin_ngdoc = 1
 
 " Key Mappings
 map <Space> <Leader>
-map <Leader>bc :BCommits!<CR>
+map <Leader>bc :lua require('telescope.builtin').git_commits()<CR>
 map <Leader>glg :CocCommand fzf-preview.GitLogs<CR>
-map <Leader>gs :Gstatus<CR>
+map <Leader>gs :Git<CR>
 map <leader>b :CocCommand fzf-preview.Buffers<CR>
 map <leader>m :CocCommand fzf-preview.ProjectMruFiles<CR>
 map <leader>ga :CocCommand fzf-preview.GitActions<CR>
@@ -117,21 +118,36 @@ nmap <space>e :CocCommand explorer<CR>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
 nnoremap <C-p> :CocCommand fzf-preview.ProjectFiles<CR>
-nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gd :Gdiffsplit<CR>
+nnoremap <Leader>gb :Gbrowse<CR>
 nnoremap <Leader>rt :JSXReplaceTag<CR>
-nnoremap <F10> :bnext<CR>
-nnoremap <F9> :bprev<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <space>s :w<CR>
-nnoremap <leader>g :Telescope live_grep<CR>
+" nnoremap <leader>g :Telescope live_grep<CR>
+" https://github.com/nvim-telescope/telescope.nvim/issues/392
+" https://github.com/nvim-telescope/telescope.nvim/pull/457
+nnoremap <leader>g :lua require'telescope.builtin'.grep_string{ only_sort_text = true, search = vim.fn.input("Grep For > ") }<CR>
 nnoremap <leader>t :Tags<CR>
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+" Telescope Configuration
+lua << EOF
+require('telescope').setup{
+    extensions = {
+        fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+        }
+    }
+}
+require('telescope').load_extension('fzy_native')
+EOF
 
 " Dart language
 let g:dart_style_guide = 2
@@ -388,3 +404,6 @@ au BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 
 " JenkinsFile
 au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+
+" Fugitive
+autocmd BufReadPost fugitive://* set bufhidden=delete
