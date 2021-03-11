@@ -23,7 +23,6 @@ set signcolumn=yes
 set hidden
 set cmdheight=2
 set updatetime=300
-set nohlsearch
 set noerrorbells
 set background=dark
 
@@ -108,12 +107,12 @@ map <Space> <Leader>
 map <Leader>bc :lua require('telescope.builtin').git_commits()<CR>
 map <Leader>glg :CocCommand fzf-preview.GitLogs<CR>
 map <Leader>gs :Git<CR>
-map <leader>b :CocCommand fzf-preview.Buffers<CR>
-map <leader>m :CocCommand fzf-preview.ProjectMruFiles<CR>
-map <leader>ga :CocCommand fzf-preview.GitActions<CR>
+map <Leader>b :CocCommand fzf-preview.Buffers<CR>
+map <Leader>m :CocCommand fzf-preview.ProjectMruFiles<CR>
+map <Leader>ga :CocCommand fzf-preview.GitActions<CR>
 map <Leader>qq :qall<CR>
-xmap <leader>r  <Plug>(coc-codeaction-selected)
-nmap <leader>r  <Plug>(coc-codeaction-selected)
+xmap <Leader>r  <Plug>(coc-codeaction-selected)
+nmap <Leader>r  <Plug>(coc-codeaction-selected)
 nmap <space>e :CocCommand explorer<CR>
 nmap ff :Format<CR>
 nmap <Leader>w :bd<CR>
@@ -125,16 +124,17 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <space>s :w<CR>
+nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
+nnoremap <space><space> :nohlsearch<CR>
 " nnoremap <leader>g :Telescope live_grep<CR>
 " https://github.com/nvim-telescope/telescope.nvim/issues/392
 " https://github.com/nvim-telescope/telescope.nvim/pull/457
-nnoremap <leader>g :lua require'telescope.builtin'.grep_string{ only_sort_text = true, search = vim.fn.input("Grep For > ") }<CR>
+nnoremap <Leader>g :lua require'telescope.builtin'.grep_string{ only_sort_text = true, search = vim.fn.input("Grep For > ") }<CR>
 nnoremap <leader>t :Tags<CR>
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " Telescope Configuration
 lua << EOF
