@@ -1,12 +1,15 @@
 # .dotfiles Management
 
-The dotfiles are managed with GNU Stow
+The dotfiles are managed with GNU Stow 
 
-## install GNU Stow:
+- https://www.gnu.org/software/stow/
+
+## Install GNU Stow:
 
 `brew install stow`
 
-NOTE: The `-n` argument in the commands only simulates the operation by showing the output of what's going to do.
+#### NOTE: 
+The `-n` argument in the commands only simulates the operation by showing the output of what's going to do.
 
 To actually execute te command remove the `n` from the arguments.
 
@@ -24,7 +27,8 @@ To install only specific config files: `stow -nvSt ~ nvim zsh`
 
 `~/.dotfiles/nvim/.config/init.vim`
 
-NOTE: `nvim` simulates `$HOME` directory
+#### NOTE: 
+`nvim` simulates `$HOME` directory
 
 then run: `stow -nvt ~ nvim` to create the symlink
 
