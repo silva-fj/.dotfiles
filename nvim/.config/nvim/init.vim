@@ -62,16 +62,19 @@ Plug 'jparise/vim-graphql'
 Plug 'Valloric/MatchTagAlways'
 Plug 'tpope/vim-unimpaired'
 Plug 'mbbill/undotree'
-Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-ruby/vim-ruby'
 Plug 'mhinz/vim-startify'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'liuchengxu/vim-which-key'
-Plug 'udalov/kotlin-vim'
+" Plug 'liuchengxu/vim-which-key'
+" Plug 'udalov/kotlin-vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'tomlion/vim-solidity'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'christianchiarulli/nvcode-color-schemes.vim'
+" Plug 'tomlion/vim-solidity'
+Plug 'sheerun/vim-polyglot'
 " ------------ Colorschemas ----------------
 Plug 'morhetz/gruvbox'
 " Plug 'arcticicestudio/nord-vim'
@@ -96,6 +99,10 @@ colorscheme gruvbox
 " let g:airline_theme='oceanicnext'
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
+
+" Nvcode Theme
+" colorscheme nvcode
+" let g:nvcode_termcolors=256
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
@@ -124,7 +131,7 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <space>s :w<CR>
-nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
+" nnoremap <silent> <Leader> :WhichKey '<Space>'<CR>
 nnoremap <space><space> :nohlsearch<CR>
 " nnoremap <leader>g :Telescope live_grep<CR>
 " https://github.com/nvim-telescope/telescope.nvim/issues/392
@@ -149,29 +156,40 @@ require('telescope').setup{
 require('telescope').load_extension('fzy_native')
 EOF
 
+" Treesitter Configuration
+" lua << EOF
+" require'nvim-treesitter.configs'.setup {
+  " ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  " highlight = {
+    " enable = true,              -- false will disable the whole extension
+    " disable = { "c", "rust" },  -- list of language that will be disabled
+  " },
+" }
+" EOF
+
 " Dart language
-let g:dart_style_guide = 2
+" let g:dart_style_guide = 2
 
 " WhichKey Configuration
-set timeoutlen=500
-let g:which_key_map =  {}
-let g:which_key_sep = '→' 
-let g:which_key_use_floating_win = 0
-let g:which_key_map.f = {
-      \ 'name' : '+Flutter Commands' ,
-      \ 'r' : [':CocCommand flutter.run', 'Run Flutter'],
-      \ 'a' : [':CocCommand flutter.attach', 'Attach running app'],
-      \ 'u' : [':CocCommand flutter.pub.get', 'Update dependencies (pub get)'],
-      \ 'o' : [':CocCommand flutter.devices', 'Open devices list'],
-      \ 'e' : [':CocCommand flutter.emulators', 'Open emulators list'],
-      \ 'R' : [':CocCommand flutter.dev.hotRestart', 'Hot restart'],
-      \ 'l' : [':CocCommand flutter.dev.openDevLog', 'Open flutter dev log server'],
-      \ 'd' : [':CocCommand flutter.dev.openDevToolsProfiler', 'Open devtools debugger'],
-      \ 's' : [':CocCommand flutter.dev.screenshot', 'To save a screenshot to flutter.png'],
-      \ 'q' : [':CocCommand flutter.dev.quit', 'Quit server'],
-      \ 'p' : [':CocCommand flutter.dev.openProfiler', 'Open observatory debugger and profiler web page'],
-      \ }
-call which_key#register('<Space>', "g:which_key_map")
+" set timeoutlen=500
+" let g:which_key_map =  {}
+" let g:which_key_sep = '→'
+" let g:which_key_use_floating_win = 0
+" let g:which_key_map.f = {
+      " \ 'name' : '+Flutter Commands' ,
+      " \ 'r' : [':CocCommand flutter.run', 'Run Flutter'],
+      " \ 'a' : [':CocCommand flutter.attach', 'Attach running app'],
+      " \ 'u' : [':CocCommand flutter.pub.get', 'Update dependencies (pub get)'],
+      " \ 'o' : [':CocCommand flutter.devices', 'Open devices list'],
+      " \ 'e' : [':CocCommand flutter.emulators', 'Open emulators list'],
+      " \ 'R' : [':CocCommand flutter.dev.hotRestart', 'Hot restart'],
+      " \ 'l' : [':CocCommand flutter.dev.openDevLog', 'Open flutter dev log server'],
+      " \ 'd' : [':CocCommand flutter.dev.openDevToolsProfiler', 'Open devtools debugger'],
+      " \ 's' : [':CocCommand flutter.dev.screenshot', 'To save a screenshot to flutter.png'],
+      " \ 'q' : [':CocCommand flutter.dev.quit', 'Quit server'],
+      " \ 'p' : [':CocCommand flutter.dev.openProfiler', 'Open observatory debugger and profiler web page'],
+      " \ }
+" call which_key#register('<Space>', "g:which_key_map")
 
 " Coc Explorer Configuration
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
