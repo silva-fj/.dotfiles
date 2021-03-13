@@ -227,8 +227,8 @@ let g:startify_lists = [
     \ ]
 
 let g:startify_bookmarks = [ 
-    \ {'c': '~/.config/nvim/init.vim'}, 
-    \ {'s': '~/.config/nvim/coc-settings.json'}, 
+    \ {'c': '~/.dotfiles/nvim/.config/nvim/init.vim'}, 
+    \ {'s': '~/.dotfiles/nvim/.config/nvim/coc-settings.json'}, 
     \ {'t': '~/.zshrc'},
     \ ]
 
