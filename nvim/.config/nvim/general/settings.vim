@@ -25,6 +25,9 @@ set cmdheight=2
 set updatetime=300
 set noerrorbells
 set background=dark
+set nowrap
+set clipboard=unnamedplus
+set shortmess+=c
 
 " Ignore files/directories from autocomplete and fzf
 set wildignore+=*/tmp/*
