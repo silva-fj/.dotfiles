@@ -21,12 +21,12 @@ source ~/.config/nvim/plugin-config/undotree.vim
 " source ~/.config/nvim/plugin-config/nvim-treesitter.vim
 " source ~/.config/nvim/plugin-config/vim-which-key.vim
 
-"General settings
+" General settings
 source ~/.config/nvim/general/settings.vim
 source ~/.config/nvim/general/theme.vim
 source ~/.config/nvim/general/mappings.vim
 
-"Neovim Terminal Configuration
+" Neovim Terminal Configuration
 if has('nvim')
     tnoremap <Space><Esc> <C-\><C-n>
 endif
