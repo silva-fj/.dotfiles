@@ -23,7 +23,7 @@ lua require'lspconfig'.tsserver.setup{}
 set completeopt=menuone,noinsert
 
 " " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
-let g:completion_enable_snippet = 'UltiSnips'
+let g:completion_enable_snippet = 'vim-vsnip'
 
 " Auto Commands
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)

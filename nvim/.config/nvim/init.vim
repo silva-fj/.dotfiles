@@ -11,6 +11,7 @@ source ~/.config/nvim/vim-plug/plugins.vim
 " source ~/.config/nvim/plugin-config/coc.vim
 source ~/.config/nvim/plugin-config/lsp-config.vim
 source ~/.config/nvim/plugin-config/lspsaga.vim
+source ~/.config/nvim/plugin-config/vim-vsnip.vim
 source ~/.config/nvim/plugin-config/telescope.nvim.vim
 source ~/.config/nvim/plugin-config/vim-startify.vim
 source ~/.config/nvim/plugin-config/nerdcommenter.vim
