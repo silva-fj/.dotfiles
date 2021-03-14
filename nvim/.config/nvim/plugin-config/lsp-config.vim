@@ -16,8 +16,8 @@ set completeopt=menuone,noinsert
 let g:completion_enable_snippet = 'vim-vsnip'
 
 " Auto Commands
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.js :Prettier
+autocmd BufWritePre *.jsx :Prettier
+autocmd BufWritePre *.ts :Prettier
+autocmd BufWritePre *.tsx :Prettier
 autocmd BufEnter * lua require'completion'.on_attach()
