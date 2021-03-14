@@ -18,8 +18,10 @@ source ~/.config/nvim/plugin-config/vim-fugitive.vim
 source ~/.config/nvim/plugin-config/vim-closetag.vim
 source ~/.config/nvim/plugin-config/MatchTagAlways.vim
 source ~/.config/nvim/plugin-config/undotree.vim
+source ~/.config/nvim/plugin-config/vim-airline.vim
 " source ~/.config/nvim/plugin-config/nvim-treesitter.vim
 " source ~/.config/nvim/plugin-config/vim-which-key.vim
+luafile ~/.config/nvim/plugin-config/nvim-web-devicons.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
