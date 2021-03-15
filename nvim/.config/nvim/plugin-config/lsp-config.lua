@@ -1,7 +1,26 @@
-local nvim_lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
+
+local lsp_status = require('lsp-status')
+local kind_labels_mt = {__index = function(_, k) return k end}
+local kind_labels = {}
+setmetatable(kind_labels, kind_labels_mt)
+
+lsp_status.register_progress()
+lsp_status.config({
+  kind_labels = kind_labels,
+  indicator_errors = "×",
+  indicator_warnings = "!",
+  indicator_info = "i",
+  indicator_hint = "›",
+  -- the default is a wide codepoint which breaks absolute and relative
+  -- line counts if placed before airline's Z section
+  status_symbol = "",
+})
 
 local on_attach = function(client, bufnr)
   print("LSP started.");
+
+  lsp_status.on_attach(client, buffer)
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -34,11 +53,13 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
 
 -- Use a loop to conveniently both setup defined servers and map buffer local keybindings when the language server attaches
 local servers = { "tsserver", "cssls", "intelephense", "vimls", "yamlls", "html"}
+
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { 
+  lspconfig[lsp].setup { 
     on_attach = on_attach,
     capabilities = capabilities,
   }

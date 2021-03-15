@@ -3,9 +3,16 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#coc#enabled = 0
-let airline#extensions#coc#error_symbol = 'Error:'
-let airline#extensions#coc#warning_symbol = 'Warning:'
-let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 let g:airline_powerline_fonts = 1
+
+" LSP status integration
+function! LspStatus() abort
+  let status = luaeval('require("lsp-status").status()')
+  return trim(status)
+endfunction
+
+call airline#parts#define_function('lsp_status', 'LspStatus')
+call airline#parts#define_condition('lsp_status', 'luaeval("#vim.lsp.buf_get_clients() > 0")')
+
+let g:airline#extensions#nvimlsp#enabled = 1
+let g:airline_section_warning = airline#section#create_right(['lsp_status'])
