@@ -30,6 +30,7 @@ luafile ~/.config/nvim/plugin-config/lsp-config.lua
 luafile ~/.config/nvim/plugin-config/lspsaga.lua
 luafile ~/.config/nvim/plugin-config/lspkind-nvim.lua
 luafile ~/.config/nvim/plugin-config/nvim-compe.lua
+luafile ~/.config/nvim/plugin-config/nvim-autopairs.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
