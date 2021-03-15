@@ -8,7 +8,6 @@
 source ~/.config/nvim/vim-plug/plugins.vim
 
 " Plugin Config
-" source ~/.config/nvim/plugin-config/coc.vim
 source ~/.config/nvim/plugin-config/lspsaga.vim
 source ~/.config/nvim/plugin-config/nvim-compe.vim
 source ~/.config/nvim/plugin-config/vim-vsnip.vim
