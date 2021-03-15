@@ -1,5 +1,15 @@
-local nvim_lsp = require('lspconfig')
+local lsp_config = require('lspconfig')
+local nvim_completion = require('completion')
+
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+
 local on_attach = function(client, bufnr)
+  print('LSP started.')
+
+  nvim_completion.on_attach(client)
+  lsp_status.on_attach(client)
+
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -13,35 +23,20 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-
-  -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=None guibg=DarkGray guifg=LightYellow
-      hi LspReferenceText cterm=bold ctermbg=None guibg=DarkGray guifg=LightYellow
-      hi LspReferenceWrite cterm=bold ctermbg=None guibg=DarkGray guifg=LightYellow
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]], false)
-  end
 end
 
--- Use a loop to conveniently both setup defined servers and map buffer local keybindings when the language server attaches
-local servers = { "tsserver", "cssls", "intelephense", "vimls", "yamlls"}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
-
--- HTML server
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
-}
+-- Use a loop to conveniently both setup defined servers and map buffer local keybindings when the language server attaches
+local servers = { "tsserver", "cssls", "intelephense", "vimls", "yamlls", "html"}
+for _, lsp in ipairs(servers) do
+  lsp_config[lsp].setup { 
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
 
 -- JSON server
 require'lspconfig'.jsonls.setup {

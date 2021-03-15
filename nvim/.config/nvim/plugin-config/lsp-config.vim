@@ -14,10 +14,3 @@ set completeopt=menuone,noinsert
 
 " " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
 let g:completion_enable_snippet = 'vim-vsnip'
-
-" Auto Commands
-autocmd BufWritePre *.js :Prettier
-autocmd BufWritePre *.jsx :Prettier
-autocmd BufWritePre *.ts :Prettier
-autocmd BufWritePre *.tsx :Prettier
-autocmd BufEnter * lua require'completion'.on_attach()
