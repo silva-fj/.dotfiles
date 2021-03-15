@@ -9,8 +9,8 @@ source ~/.config/nvim/vim-plug/plugins.vim
 
 " Plugin Config
 " source ~/.config/nvim/plugin-config/coc.vim
-source ~/.config/nvim/plugin-config/lsp-config.vim
 source ~/.config/nvim/plugin-config/lspsaga.vim
+source ~/.config/nvim/plugin-config/nvim-compe.vim
 source ~/.config/nvim/plugin-config/vim-vsnip.vim
 source ~/.config/nvim/plugin-config/telescope.nvim.vim
 source ~/.config/nvim/plugin-config/vim-startify.vim
@@ -29,6 +29,7 @@ source ~/.config/nvim/plugin-config/vim-prettier.vim
 luafile ~/.config/nvim/plugin-config/lsp-config.lua
 luafile ~/.config/nvim/plugin-config/lspsaga.lua
 luafile ~/.config/nvim/plugin-config/lspkind-nvim.lua
+luafile ~/.config/nvim/plugin-config/nvim-compe.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
