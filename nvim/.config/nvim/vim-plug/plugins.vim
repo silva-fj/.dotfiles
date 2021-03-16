@@ -55,17 +55,17 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'windwp/nvim-autopairs'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'christianchiarulli/nvcode-color-schemes.vim'
 " Plug 'tomlion/vim-solidity'
 Plug 'sheerun/vim-polyglot'
 " ------------ Colorschemas ----------------
 Plug 'morhetz/gruvbox'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'mhartington/oceanic-next'
-" Plug 'haishanh/night-owl.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'mhartington/oceanic-next'
+Plug 'haishanh/night-owl.vim'
 call plug#end()
 
 " Automatically install missing plugins on startup

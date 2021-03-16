@@ -1,6 +1,3 @@
-" Enable true colors and termguicolors 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 " [ Color Schemes - Themes ]
 colorscheme gruvbox
 " colorscheme onedark
@@ -20,3 +17,11 @@ colorscheme gruvbox
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
+
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
+
+" Enable true colors and termguicolors 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
