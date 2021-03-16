@@ -52,6 +52,7 @@ Plug 'windwp/nvim-autopairs'
 " Plug 'christianchiarulli/nvcode-color-schemes.vim'
 " Plug 'tomlion/vim-solidity'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'sheerun/vim-polyglot'
 " LSP
