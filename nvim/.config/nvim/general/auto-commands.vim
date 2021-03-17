@@ -8,3 +8,6 @@ au BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 
 " JenkinsFile
 au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+
+" Lua formatting
+autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100)
