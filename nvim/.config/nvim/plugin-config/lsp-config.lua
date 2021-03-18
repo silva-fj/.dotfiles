@@ -1,3 +1,8 @@
+vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
+vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
+vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
+vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
+
 local lspconfig = require('lspconfig')
 
 local lsp_status = require('lsp-status')
@@ -60,6 +65,34 @@ local on_attach = function(client, bufnr)
     -- end
 end
 
+local on_attach_tsserver = function(client, bufnr)
+    print("LSP tsserver started.");
+
+    if client.config.flags then client.config.flags.allow_incremental_sync = true end
+    client.resolved_capabilities.document_formatting = false
+
+    lsp_status.on_attach(client, bufnr)
+
+    local function buf_set_keymap(...)
+        vim.api.nvim_buf_set_keymap(bufnr, ...)
+    end
+    local function buf_set_option(...)
+        vim.api.nvim_buf_set_option(bufnr, ...)
+    end
+
+    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    -- Mappings.
+    local opts = {noremap = true, silent = true}
+    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    buf_set_keymap('n', '<space>a', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+end
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
@@ -68,6 +101,8 @@ capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilitie
 local servers = {"tsserver", "cssls", "intelephense", "vimls", "yamlls", "html"}
 
 for _, lsp in ipairs(servers) do lspconfig[lsp].setup {on_attach = on_attach, capabilities = capabilities} end
+
+require'lspconfig'.tsserver.setup {on_attach = on_attach_tsserver}
 
 -- JSON server
 require'lspconfig'.jsonls.setup {
@@ -80,10 +115,32 @@ require'lspconfig'.jsonls.setup {
     }
 }
 
+local eslint = {lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}", lintStdin = true, lintIgnoreExitCode = true}
+
+local function eslint_config_exists()
+    local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
+
+    if not vim.tbl_isempty(eslintrc) then return true end
+
+    if vim.fn.filereadable("package.json") then if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then return true end end
+
+    return false
+end
+
 -- General purpose Language Server
 require'lspconfig'.efm.setup {
+    on_attach = function(client)
+        print("LSP efm started.");
+        client.resolved_capabilities.document_formatting = true
+        client.resolved_capabilities.goto_definition = false
+        -- set_lsp_config(client)
+    end,
+    root_dir = function()
+        if not eslint_config_exists() then return nil end
+        return vim.fn.getcwd()
+    end,
     init_options = {documentFormatting = true},
-    filetypes = {"lua"},
+    filetypes = {"lua", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescript.tsx", "typescriptreact"},
     settings = {
         rootMarkers = {".git/"},
         languages = {
@@ -92,12 +149,13 @@ require'lspconfig'.efm.setup {
                     formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=150 --break-after-table-lb",
                     formatStdin = true
                 }
-            }
+            },
+            javascript = {eslint},
+            javascriptreact = {eslint},
+            ["javascript.jsx"] = {eslint},
+            typescript = {eslint},
+            ["typescript.tsx"] = {eslint},
+            typescriptreact = {eslint}
         }
     }
 }
-
-vim.fn.sign_define("LspDiagnosticsSignError", {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"})
-vim.fn.sign_define("LspDiagnosticsSignWarning", {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"})
-vim.fn.sign_define("LspDiagnosticsSignInformation", {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"})
-vim.fn.sign_define("LspDiagnosticsSignHint", {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"})
