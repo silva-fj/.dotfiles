@@ -102,6 +102,13 @@ local on_attach_tsserver = function(client, bufnr)
     buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
     buf_set_keymap('n', '<space>a', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
+    -- Set some keybinds conditional on server capabilities
+    if client.resolved_capabilities.document_formatting then
+      buf_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    elseif client.resolved_capabilities.document_range_formatting then
+      buf_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+    end
+
         -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
@@ -123,7 +130,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
 
 -- Use a loop to conveniently both setup defined servers and map buffer local keybindings when the language server attaches
-local servers = {"tsserver", "cssls", "intelephense", "vimls", "yamlls", "html"}
+local servers = {"cssls", "intelephense", "vimls", "yamlls", "html"}
 
 for _, lsp in ipairs(servers) do lspconfig[lsp].setup {on_attach = on_attach, capabilities = capabilities} end
 
@@ -141,6 +148,8 @@ require'lspconfig'.jsonls.setup {
 }
 
 local eslint = {lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}", lintStdin = true, lintIgnoreExitCode = true}
+local prettier = {formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}", formatStdin = true}
+local prettier_yaml = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
 
 local function eslint_config_exists()
     local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
@@ -158,14 +167,13 @@ require'lspconfig'.efm.setup {
         print("LSP efm started.");
         client.resolved_capabilities.document_formatting = true
         client.resolved_capabilities.goto_definition = false
-        -- set_lsp_config(client)
     end,
     root_dir = function()
         if not eslint_config_exists() then return nil end
         return vim.fn.getcwd()
     end,
-    init_options = {documentFormatting = true},
-    filetypes = {"lua", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescript.tsx", "typescriptreact"},
+    init_options = {documentFormatting = true, codeAction = false},
+    filetypes = {"lua", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescript.tsx", "typescriptreact", "yaml"},
     settings = {
         rootMarkers = {".git/"},
         languages = {
@@ -175,12 +183,13 @@ require'lspconfig'.efm.setup {
                     formatStdin = true
                 }
             },
-            javascript = {eslint},
-            javascriptreact = {eslint},
-            ["javascript.jsx"] = {eslint},
-            typescript = {eslint},
-            ["typescript.tsx"] = {eslint},
-            typescriptreact = {eslint}
+            javascript = {eslint, prettier},
+            javascriptreact = {eslint, prettier},
+            ["javascript.jsx"] = {eslint, prettier},
+            typescript = {eslint, prettier},
+            ["typescript.tsx"] = {eslint, prettier},
+            typescriptreact = {eslint, prettier},
+            yaml = {prettier_yaml}
         }
     }
 }

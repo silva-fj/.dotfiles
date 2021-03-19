@@ -37,7 +37,6 @@ Plug 'mhinz/vim-startify'
 " Plug 'dart-lang/dart-vim-plugin'
 Plug 'Neevash/awesome-flutter-snippets'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'alDuncanson/react-hooks-snippets'
 " Plug 'liuchengxu/vim-which-key'
 " Plug 'udalov/kotlin-vim'

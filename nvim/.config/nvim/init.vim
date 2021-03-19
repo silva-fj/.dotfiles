@@ -22,7 +22,6 @@ source ~/.config/nvim/plugin-config/vim-airline.vim
 source ~/.config/nvim/plugin-config/MatchTagAlways.vim
 source ~/.config/nvim/plugin-config/undotree.vim
 source ~/.config/nvim/plugin-config/nvim-tree.vim
-source ~/.config/nvim/plugin-config/vim-prettier.vim
 " source ~/.config/nvim/plugin-config/vim-which-key.vim
 luafile ~/.config/nvim/plugin-config/lsp-config.lua
 luafile ~/.config/nvim/plugin-config/lspsaga.lua
