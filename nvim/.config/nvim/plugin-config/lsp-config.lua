@@ -1,8 +1,3 @@
--- vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
--- vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
--- vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
--- vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
-
 vim.fn.sign_define("LspDiagnosticsSignError",
                    {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"})
 vim.fn.sign_define("LspDiagnosticsSignWarning",
@@ -26,10 +21,10 @@ setmetatable(kind_labels, kind_labels_mt)
 lsp_status.register_progress()
 lsp_status.config({
     kind_labels = kind_labels,
-    indicator_errors = "×",
-    indicator_warnings = "!",
-    indicator_info = "i",
-    indicator_hint = "›",
+    indicator_errors = "",
+    indicator_warnings = "",
+    indicator_info = "",
+    indicator_hint = "",
     -- the default is a wide codepoint which breaks absolute and relative
     -- line counts if placed before airline's Z section
     status_symbol = ""
@@ -43,11 +38,6 @@ local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
-    local function buf_set_option(...)
-        vim.api.nvim_buf_set_option(bufnr, ...)
-    end
-
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
     local opts = {noremap = true, silent = true}
@@ -86,11 +76,6 @@ local on_attach_tsserver = function(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
-    local function buf_set_option(...)
-        vim.api.nvim_buf_set_option(bufnr, ...)
-    end
-
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
     local opts = {noremap = true, silent = true}
