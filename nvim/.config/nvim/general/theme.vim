@@ -1,15 +1,15 @@
 " [ Color Schemes - Themes ]
-colorscheme gruvbox
+" colorscheme gruvbox
 " colorscheme onedark
 " colorscheme nord
 " colorscheme dracula
 " colorscheme night-owl
 
 " OceanicNext Theme
-" colorscheme OceanicNext
-" let g:airline_theme='oceanicnext'
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+let g:airline_theme='oceanicnext'
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 
 " Nvcode Theme
 " colorscheme nvcode
