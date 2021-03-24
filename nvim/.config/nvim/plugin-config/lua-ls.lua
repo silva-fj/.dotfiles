@@ -15,6 +15,9 @@ else
 end
 
 require'lspconfig'.sumneko_lua.setup {
+    on_attach = function()
+        print("LSP lua started.");
+    end,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
         Lua = {
@@ -30,7 +33,9 @@ require'lspconfig'.sumneko_lua.setup {
             },
             workspace = {
                 -- Make the server aware of Neovim runtime files
-                library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
+                library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
+                maxPreload = 1000,
+                preloadFileSize = 1000
             }
         }
     }
