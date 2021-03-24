@@ -14,13 +14,13 @@ source ~/.config/nvim/plugin-config/vim-vsnip.vim
 source ~/.config/nvim/plugin-config/telescope.nvim.vim
 source ~/.config/nvim/plugin-config/vim-startify.vim
 source ~/.config/nvim/plugin-config/nerdcommenter.vim
-source ~/.config/nvim/plugin-config/dart-vim-plugin.vim
-source ~/.config/nvim/plugin-config/fzf.vim
+" source ~/.config/nvim/plugin-config/dart-vim-plugin.vim
+" source ~/.config/nvim/plugin-config/fzf.vim
 source ~/.config/nvim/plugin-config/vim-fugitive.vim
-source ~/.config/nvim/plugin-config/vim-closetag.vim
+" source ~/.config/nvim/plugin-config/vim-closetag.vim
 source ~/.config/nvim/plugin-config/vim-airline.vim
-source ~/.config/nvim/plugin-config/MatchTagAlways.vim
-source ~/.config/nvim/plugin-config/undotree.vim
+" source ~/.config/nvim/plugin-config/MatchTagAlways.vim
+" source ~/.config/nvim/plugin-config/undotree.vim
 source ~/.config/nvim/plugin-config/nvim-tree.vim
 " source ~/.config/nvim/plugin-config/vim-which-key.vim
 luafile ~/.config/nvim/plugin-config/lsp-config.lua

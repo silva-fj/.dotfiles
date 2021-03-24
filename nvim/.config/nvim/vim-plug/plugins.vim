@@ -7,42 +7,55 @@ endif
 
 " Plugins
 call plug#begin('~/.config/nvim/autoload/plugged')
-Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
-Plug 'junegunn/fzf.vim'
+
+" General utils
 Plug 'airblade/vim-rooter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'othree/html5.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-gitgutter'
-Plug 'alvan/vim-closetag'
-Plug 'nelsyeung/twig.vim'
-Plug 'AndrewRadev/tagalong.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-rhubarb'
 Plug 'tyru/open-browser.vim'
-Plug 'jparise/vim-graphql'
-Plug 'Valloric/MatchTagAlways'
-Plug 'tpope/vim-unimpaired'
-Plug 'mbbill/undotree'
+" Plug 'tpope/vim-unimpaired'
+" Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
-Plug 'Neevash/awesome-flutter-snippets'
-Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
-Plug 'alDuncanson/react-hooks-snippets'
+Plug 'windwp/nvim-autopairs'
+
+" File explorer
+Plug 'kyazdani42/nvim-tree.lua'
+
+" Fuzzy finder
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
+" Plug 'junegunn/fzf.vim'
+
+" Status line ans status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'romgrk/barbar.nvim'
+
+" Tags
+Plug 'windwp/nvim-ts-autotag'
+" Plug 'alvan/vim-closetag'
+" Plug 'AndrewRadev/tagalong.vim'
+" Plug 'Valloric/MatchTagAlways' check if this works
+
+" Snippets
+Plug 'alDuncanson/react-hooks-snippets'
+Plug 'Neevash/awesome-flutter-snippets'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'windwp/nvim-autopairs'
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+
+" Icons
+Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
-Plug 'kyazdani42/nvim-tree.lua'
+
+" Git 
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
 
 " LSP
 Plug 'nvim-lua/lsp-status.nvim'
@@ -52,15 +65,22 @@ Plug 'kosayoda/nvim-lightbulb'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
 
-" ------------ Colorschemas ----------------
-" Plug 'christianchiarulli/nvcode-color-schemes.vim'
+" Colorschemas
 Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'
+" Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'haishanh/night-owl.vim'
+
+" Syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nelsyeung/twig.vim'
+" Plug 'othree/html5.vim'
+Plug 'jparise/vim-graphql'
+
 call plug#end()
 
 " Automatically install missing plugins on startup
