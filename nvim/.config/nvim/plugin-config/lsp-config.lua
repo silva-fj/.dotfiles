@@ -125,19 +125,13 @@ require'lspconfig'.jsonls.setup {
     }
 }
 
-local eslint = {lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}", lintStdin = true, lintIgnoreExitCode = true}
+local eslint = {
+    lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+    lintStdin = true,
+    lintIgnoreExitCode = true
+}
 local prettier = {formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}", formatStdin = true}
-local prettier_yaml = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
-
-local function eslint_config_exists()
-    local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
-
-    if not vim.tbl_isempty(eslintrc) then return true end
-
-    if vim.fn.filereadable("package.json") then if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then return true end end
-
-    return false
-end
+local prettier_global = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
 
 -- General purpose Language Server
 require'lspconfig'.efm.setup {
@@ -146,18 +140,17 @@ require'lspconfig'.efm.setup {
         client.resolved_capabilities.document_formatting = true
         client.resolved_capabilities.goto_definition = false
     end,
-    root_dir = function()
-        if not eslint_config_exists() then return nil end
-        return vim.fn.getcwd()
-    end,
     init_options = {documentFormatting = true, codeAction = false},
-    filetypes = {"lua", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescript.tsx", "typescriptreact", "yaml"},
+    filetypes = {
+        "lua", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescript.tsx", "typescriptreact",
+        "yaml", "html", "css", "json"
+    },
     settings = {
         rootMarkers = {".git/"},
         languages = {
             lua = {
                 {
-                    formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=150 --break-after-table-lb",
+                    formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=120 --break-after-table-lb",
                     formatStdin = true
                 }
             },
@@ -167,7 +160,10 @@ require'lspconfig'.efm.setup {
             typescript = {eslint, prettier},
             ["typescript.tsx"] = {eslint, prettier},
             typescriptreact = {eslint, prettier},
-            yaml = {prettier_yaml}
+            yaml = {prettier_global},
+            html = {prettier_global},
+            css = {prettier_global},
+            json = {prettier_global}
         }
     }
 }
