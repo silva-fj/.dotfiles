@@ -3,5 +3,10 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = {"c", "rust"} -- list of language that will be disabled
+    },
+    indent = {enable = true},
+    autotag = {
+        enable = true,
+        filetypes = {'html', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'typescript'}
     }
 }
