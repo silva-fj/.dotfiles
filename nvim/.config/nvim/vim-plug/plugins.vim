@@ -27,8 +27,6 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-" Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
-" Plug 'junegunn/fzf.vim'
 
 " Status line ans status bar
 Plug 'vim-airline/vim-airline'
@@ -36,10 +34,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'romgrk/barbar.nvim'
 
 " Tags
-Plug 'windwp/nvim-ts-autotag'
-" Plug 'alvan/vim-closetag'
-" Plug 'AndrewRadev/tagalong.vim'
-" Plug 'Valloric/MatchTagAlways' check if this works
+ Plug 'windwp/nvim-ts-autotag'
 
 " Snippets
 Plug 'alDuncanson/react-hooks-snippets'
@@ -78,7 +73,6 @@ Plug 'haishanh/night-owl.vim'
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nelsyeung/twig.vim'
-" Plug 'othree/html5.vim'
 Plug 'jparise/vim-graphql'
 
 call plug#end()
