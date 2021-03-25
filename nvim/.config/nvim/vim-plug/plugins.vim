@@ -32,6 +32,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'romgrk/barbar.nvim'
+" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
 " Tags
  Plug 'windwp/nvim-ts-autotag'

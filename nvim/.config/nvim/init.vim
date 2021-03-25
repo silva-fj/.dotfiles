@@ -28,6 +28,7 @@ luafile ~/.config/nvim/plugin-config/nvim-treesitter.lua
 luafile ~/.config/nvim/plugin-config/nvim-ts-autotag.lua
 luafile ~/.config/nvim/plugin-config/nvim-lightbulb.lua
 luafile ~/.config/nvim/plugin-config/lua-ls.lua
+" luafile ~/.config/nvim/plugin-config/galaxyline.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
