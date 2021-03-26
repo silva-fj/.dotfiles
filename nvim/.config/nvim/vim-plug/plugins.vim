@@ -29,10 +29,11 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Status line ans status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'romgrk/barbar.nvim'
 " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'hoob3rt/lualine.nvim'
 
 " Tags
  Plug 'windwp/nvim-ts-autotag'
@@ -64,7 +65,6 @@ Plug 'onsails/lspkind-nvim'
 " Colorschemas
 Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'

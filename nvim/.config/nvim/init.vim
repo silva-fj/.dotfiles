@@ -15,7 +15,7 @@ source ~/.config/nvim/plugin-config/telescope.nvim.vim
 source ~/.config/nvim/plugin-config/vim-startify.vim
 source ~/.config/nvim/plugin-config/nerdcommenter.vim
 source ~/.config/nvim/plugin-config/vim-fugitive.vim
-source ~/.config/nvim/plugin-config/vim-airline.vim
+" source ~/.config/nvim/plugin-config/vim-airline.vim
 " source ~/.config/nvim/plugin-config/undotree.vim
 source ~/.config/nvim/plugin-config/nvim-tree.vim
 " source ~/.config/nvim/plugin-config/vim-which-key.vim
@@ -28,6 +28,7 @@ luafile ~/.config/nvim/plugin-config/nvim-treesitter.lua
 luafile ~/.config/nvim/plugin-config/nvim-ts-autotag.lua
 luafile ~/.config/nvim/plugin-config/nvim-lightbulb.lua
 luafile ~/.config/nvim/plugin-config/lua-ls.lua
+luafile ~/.config/nvim/plugin-config/lualine.nvim.lua
 " luafile ~/.config/nvim/plugin-config/galaxyline.lua
 
 " General settings
