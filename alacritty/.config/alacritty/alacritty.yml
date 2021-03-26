@@ -307,8 +307,16 @@ key_bindings:
   - { key: Q,               mods: Control,        chars: "\x11"                        }
   - { key: P,               mods: Command,        chars: ":Telescope find_files\n"     } # Neovim command
   - { key: F,               mods: Command|Shift,  chars: ":Ag\n"                       } # Neovim command
-  - { key: Key0,            mods: Command,        chars: ":bnext\n"                    } # Neovim command
-  - { key: Key9,            mods: Command,        chars: ":bprev\n"                    } # Neovim command
+  - { key: Key0,            mods: Command,        chars: ":BufferNext\n"               } # Neovim command
+  - { key: Key9,            mods: Command,        chars: ":BufferPrevious\n"           } # Neovim command
+  - { key: Key1,            mods: Command,        chars: ":BufferGoto 1\n"             } # Neovim command
+  - { key: Key2,            mods: Command,        chars: ":BufferGoto 2\n"             } # Neovim command
+  - { key: Key3,            mods: Command,        chars: ":BufferGoto 3\n"             } # Neovim command
+  - { key: Key4,            mods: Command,        chars: ":BufferGoto 4\n"             } # Neovim command
+  - { key: Key5,            mods: Command,        chars: ":BufferGoto 5\n"             } # Neovim command
+  - { key: Key6,            mods: Command,        chars: ":BufferGoto 6\n"             } # Neovim command
+  - { key: Key7,            mods: Command,        chars: ":BufferGoto 7\n"             } # Neovim command
+  - { key: Key8,            mods: Command,        chars: ":BufferGoto 8\n"             } # Neovim command
 
 #key_bindings:
   #- { key: Paste,                                action: Paste          }
