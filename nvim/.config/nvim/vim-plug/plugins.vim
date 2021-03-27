@@ -10,7 +10,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 " General utils
 Plug 'airblade/vim-rooter'
-Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tyru/open-browser.vim'
@@ -18,6 +17,8 @@ Plug 'tyru/open-browser.vim'
 " Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'windwp/nvim-autopairs'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'terrortylor/nvim-comment'
 
 " File explorer
 Plug 'kyazdani42/nvim-tree.lua'
