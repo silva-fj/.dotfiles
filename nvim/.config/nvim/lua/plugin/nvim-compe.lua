@@ -1,3 +1,5 @@
+vim.o.completeopt = "menuone,noselect"
+
 require'compe'.setup {
     enabled = true,
     autocomplete = true,
@@ -63,14 +65,11 @@ _G.s_tab_complete = function()
     end
 end
 
-_G.MUtils = {}
-
-local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
 
 vim.g.completion_confirm_key = ""
 
-MUtils.completion_confirm = function()
+_G.completion_confirm = function()
     if vim.fn.pumvisible() ~= 0 then
         if vim.fn.complete_info()["selected"] ~= -1 then
             vim.fn["compe#confirm"]()
@@ -86,4 +85,17 @@ MUtils.completion_confirm = function()
     end
 end
 
-remap('i', '<CR>', 'v:lua.MUtils.completion_confirm()', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('i', '<CR>', 'v:lua.completion_confirm()', {expr = true, noremap = true})
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+-- figure out how to call those functions un lua
+vim.cmd([[
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+    ]])
+
