@@ -8,15 +8,15 @@
 source ~/.config/nvim/vim-plug/plugins.vim
 
 " Plugin Config
-source ~/.config/nvim/plugin-config/vim-vsnip.vim
-source ~/.config/nvim/plugin-config/telescope.nvim.vim
-source ~/.config/nvim/plugin-config/vim-startify.vim
-source ~/.config/nvim/plugin-config/nerdcommenter.vim
-source ~/.config/nvim/plugin-config/vim-fugitive.vim
-" source ~/.config/nvim/plugin-config/vim-airline.vim
-" source ~/.config/nvim/plugin-config/undotree.vim
-source ~/.config/nvim/plugin-config/nvim-tree.vim
-" source ~/.config/nvim/plugin-config/vim-which-key.vim
+source ~/.config/nvim/vimscript/vim-vsnip.vim
+source ~/.config/nvim/vimscript/telescope.nvim.vim
+source ~/.config/nvim/vimscript/vim-startify.vim
+source ~/.config/nvim/vimscript/nerdcommenter.vim
+source ~/.config/nvim/vimscript/vim-fugitive.vim
+source ~/.config/nvim/vimscript/nvim-tree.vim
+" source ~/.config/nvim/vimscript/vim-airline.vim
+" source ~/.config/nvim/vimscript/undotree.vim
+" source ~/.config/nvim/vimscript/vim-which-key.vim
 
 " LSP
 luafile ~/.config/nvim/lua/nvim-lsp/lsp_config.lua
