@@ -23,7 +23,6 @@ luafile ~/.config/nvim/plugin-config/lspkind-nvim.lua
 luafile ~/.config/nvim/plugin-config/nvim-autopairs.lua
 luafile ~/.config/nvim/plugin-config/nvim-treesitter.lua
 luafile ~/.config/nvim/plugin-config/nvim-lightbulb.lua
-luafile ~/.config/nvim/plugin-config/lua-ls.lua
 " luafile ~/.config/nvim/plugin-config/galaxyline.lua
 
 " LSP
@@ -31,6 +30,7 @@ luafile ~/.config/nvim/lua/nvim-lsp/lsp_config.lua
 luafile ~/.config/nvim/lua/nvim-lsp/typescript_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/efm_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/json_ls.lua
+luafile ~/.config/nvim/lua/nvim-lsp/lua-ls.lua
 
 " Lua
 luafile ~/.config/nvim/lua/plugin/nvim-compe.lua
