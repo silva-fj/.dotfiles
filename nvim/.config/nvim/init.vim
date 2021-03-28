@@ -9,7 +9,7 @@ source ~/.config/nvim/vim-plug/plugins.vim
 
 " Plugin Config
 source ~/.config/nvim/vimscript/vim-vsnip.vim
-source ~/.config/nvim/vimscript/telescope.nvim.vim
+" source ~/.config/nvim/vimscript/telescope.nvim.vim
 source ~/.config/nvim/vimscript/vim-startify.vim
 source ~/.config/nvim/vimscript/vim-fugitive.vim
 source ~/.config/nvim/vimscript/nvim-tree.vim
@@ -34,6 +34,7 @@ luafile ~/.config/nvim/lua/plugin/lspkind-nvim.lua
 luafile ~/.config/nvim/lua/plugin/nvim-autopairs.lua
 luafile ~/.config/nvim/lua/plugin/nvim-lightbulb.lua
 luafile ~/.config/nvim/lua/plugin/nvim-comment.lua
+luafile ~/.config/nvim/lua/plugin/telescope.nvim.lua
 " luafile ~/.config/nvim/lua/plugin/galaxyline.lua
 
 " General settings
