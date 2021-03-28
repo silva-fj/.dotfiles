@@ -14,3 +14,6 @@ require('lualine').setup({
         lualine_z = {lsp_status}
     }
 })
+
+-- https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
+-- Themes: oceanicnext, gruvbox, onedark, nord, dracula
