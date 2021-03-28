@@ -3,7 +3,7 @@ local function lsp_status()
 end
 
 require('lualine').setup({
-    theme = 'gruvbox',
+    options = {theme = 'gruvbox'},
     extensions = {'fugitive'},
     sections = {
         lualine_a = {'mode'},
@@ -16,4 +16,4 @@ require('lualine').setup({
 })
 
 -- https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
--- Themes: oceanicnext, gruvbox, onedark, nord, dracula
+-- Themes: oceanicnext, gruvbox, onedark, nord, dracula, nightfly
