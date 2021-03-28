@@ -30,10 +30,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Status line ans status bar
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'romgrk/barbar.nvim'
-" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'hoob3rt/lualine.nvim'
 
 " Tags
