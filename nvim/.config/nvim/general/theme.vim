@@ -4,6 +4,7 @@ colorscheme gruvbox
 " colorscheme nord
 " colorscheme dracula
 " colorscheme night-owl
+" colorscheme nightfly
 
 " OceanicNext Theme
 " colorscheme OceanicNext

@@ -66,6 +66,7 @@ Plug 'npxbr/gruvbox.nvim'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'
+Plug 'bluz71/vim-nightfly-guicolors'
 " Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'haishanh/night-owl.vim'
 
