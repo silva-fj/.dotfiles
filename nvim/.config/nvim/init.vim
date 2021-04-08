@@ -33,6 +33,7 @@ luafile ~/.config/nvim/lua/plugin/nvim-autopairs.lua
 luafile ~/.config/nvim/lua/plugin/nvim-lightbulb.lua
 luafile ~/.config/nvim/lua/plugin/nvim-comment.lua
 luafile ~/.config/nvim/lua/plugin/telescope.nvim.lua
+luafile ~/.config/nvim/lua/plugin/lazygit.nvim.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
