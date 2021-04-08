@@ -74,6 +74,7 @@ Plug 'haishanh/night-owl.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nelsyeung/twig.vim'
 Plug 'jparise/vim-graphql'
+Plug 'mustache/vim-mustache-handlebars'
 
 call plug#end()
 
