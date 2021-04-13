@@ -16,9 +16,9 @@ g_lsp_status.register_progress()
 
 g_lsp_status.config({
     kind_labels = kind_labels,
-    indicator_errors = "",
+    indicator_errors = "",
     indicator_warnings = "",
-    indicator_info = "",
+    indicator_info = "",
     indicator_hint = "",
     -- the default is a wide codepoint which breaks absolute and relative
     -- line counts if placed before airline's Z section
