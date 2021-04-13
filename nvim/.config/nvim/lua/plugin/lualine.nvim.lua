@@ -3,7 +3,7 @@ local function lsp_status()
 end
 
 require('lualine').setup({
-    options = {theme = 'oceanicnext'},
+    options = {theme = 'gruvbox'},
     extensions = {'fugitive'},
     sections = {
         lualine_a = {'mode'},
