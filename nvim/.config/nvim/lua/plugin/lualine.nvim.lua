@@ -7,7 +7,15 @@ require('lualine').setup({
     extensions = {'fugitive'},
     sections = {
         lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff'},
+        lualine_b = {
+            'branch', {
+                'diff',
+                symbols = {added = ' ', modified = ' ', removed = ' '},
+                color_added = '#98c379',
+                color_modified = '#e5c07b',
+                color_removed = '#e06c75'
+            }
+        },
         lualine_c = {'filename'},
         lualine_x = {'filetype'},
         lualine_y = {'progress', 'location'},
