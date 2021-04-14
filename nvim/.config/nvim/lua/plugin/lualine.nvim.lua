@@ -11,7 +11,7 @@ require('lualine').setup({
     sections = {
         lualine_a = {'mode'},
         lualine_b = {
-            {'branch', icon = ''}, {
+            {'branch', icon = ''}, {
                 'diff',
                 symbols = {added = ' ', modified = ' ', removed = ' '},
                 color_added = colors.green,
