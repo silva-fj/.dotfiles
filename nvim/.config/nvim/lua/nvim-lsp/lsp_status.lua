@@ -21,8 +21,6 @@ g_lsp_status.config({
     indicator_info = "",
     indicator_hint = "",
     indicator_ok = '',
-    -- the default is a wide codepoint which breaks absolute and relative
-    -- line counts if placed before airline's Z section
     status_symbol = ""
 })
 
