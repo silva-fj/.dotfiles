@@ -7,53 +7,76 @@ endif
 
 " Plugins
 call plug#begin('~/.config/nvim/autoload/plugged')
-Plug 'junegunn/fzf', {'do':{-> fzf#install()}}
-Plug 'junegunn/fzf.vim'
+
+" General utils
 Plug 'airblade/vim-rooter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdcommenter'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'othree/yajs.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'yuezk/vim-js'
-Plug 'othree/html5.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-gitgutter'
-Plug 'alvan/vim-closetag'
-Plug 'nelsyeung/twig.vim'
-Plug 'AndrewRadev/tagalong.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-rhubarb'
 Plug 'tyru/open-browser.vim'
-Plug 'jparise/vim-graphql'
-Plug 'Valloric/MatchTagAlways'
-Plug 'tpope/vim-unimpaired'
-Plug 'mbbill/undotree'
-Plug 'vim-ruby/vim-ruby'
+" Plug 'tpope/vim-unimpaired'
+" Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'liuchengxu/vim-which-key'
-Plug 'udalov/kotlin-vim'
+Plug 'windwp/nvim-autopairs'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'terrortylor/nvim-comment'
+
+" File explorer
+Plug 'kyazdani42/nvim-tree.lua'
+
+" Fuzzy finder
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
+" Status line ans status bar
+Plug 'romgrk/barbar.nvim'
+Plug 'hoob3rt/lualine.nvim'
+
+" Tags
+ Plug 'windwp/nvim-ts-autotag'
+
+" Snippets
+Plug 'alDuncanson/react-hooks-snippets'
+Plug 'Neevash/awesome-flutter-snippets'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+
+" Icons
+Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Git 
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
+Plug 'kdheepak/lazygit.nvim'
+
+" LSP
+Plug 'nvim-lua/lsp-status.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'kosayoda/nvim-lightbulb'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'onsails/lspkind-nvim'
+
+" Colorschemas
+Plug 'rktjmp/lush.nvim'
+Plug 'npxbr/gruvbox.nvim'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'mhartington/oceanic-next'
+Plug 'bluz71/vim-nightfly-guicolors'
 " Plug 'christianchiarulli/nvcode-color-schemes.vim'
-" Plug 'tomlion/vim-solidity'
-Plug 'sheerun/vim-polyglot'
-" ------------ Colorschemas ----------------
-Plug 'morhetz/gruvbox'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'mhartington/oceanic-next'
-" Plug 'haishanh/night-owl.vim'
+Plug 'haishanh/night-owl.vim'
+
+" Syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nelsyeung/twig.vim'
+Plug 'jparise/vim-graphql'
+Plug 'mustache/vim-mustache-handlebars'
+
 call plug#end()
 
 " Automatically install missing plugins on startup

@@ -8,20 +8,32 @@
 source ~/.config/nvim/vim-plug/plugins.vim
 
 " Plugin Config
-source ~/.config/nvim/plugin-config/coc.vim
-source ~/.config/nvim/plugin-config/telescope.nvim.vim
-source ~/.config/nvim/plugin-config/vim-startify.vim
-source ~/.config/nvim/plugin-config/nerdcommenter.vim
-source ~/.config/nvim/plugin-config/dart-vim-plugin.vim
-source ~/.config/nvim/plugin-config/fzf.vim
-source ~/.config/nvim/plugin-config/vim-fugitive.vim
-source ~/.config/nvim/plugin-config/vim-closetag.vim
-source ~/.config/nvim/plugin-config/MatchTagAlways.vim
-source ~/.config/nvim/plugin-config/undotree.vim
-source ~/.config/nvim/plugin-config/vim-airline.vim
-" source ~/.config/nvim/plugin-config/nvim-treesitter.vim
-" source ~/.config/nvim/plugin-config/vim-which-key.vim
-luafile ~/.config/nvim/plugin-config/nvim-web-devicons.lua
+source ~/.config/nvim/vimscript/vim-vsnip.vim
+source ~/.config/nvim/vimscript/vim-startify.vim
+source ~/.config/nvim/vimscript/vim-fugitive.vim
+source ~/.config/nvim/vimscript/nvim-tree.vim
+" source ~/.config/nvim/vimscript/undotree.vim
+" source ~/.config/nvim/vimscript/vim-which-key.vim
+
+" LSP
+luafile ~/.config/nvim/lua/nvim-lsp/lsp_config.lua
+luafile ~/.config/nvim/lua/nvim-lsp/typescript_ls.lua
+luafile ~/.config/nvim/lua/nvim-lsp/efm_ls.lua
+luafile ~/.config/nvim/lua/nvim-lsp/json_ls.lua
+luafile ~/.config/nvim/lua/nvim-lsp/lua-ls.lua
+
+" Lua plugins config
+luafile ~/.config/nvim/lua/plugin/lspsaga.lua
+luafile ~/.config/nvim/lua/plugin/nvim-compe.lua
+luafile ~/.config/nvim/lua/plugin/nvim-treesitter.lua
+luafile ~/.config/nvim/lua/plugin/lualine.nvim.lua
+luafile ~/.config/nvim/lua/plugin/nvim-ts-autotag.lua
+luafile ~/.config/nvim/lua/plugin/lspkind-nvim.lua
+luafile ~/.config/nvim/lua/plugin/nvim-autopairs.lua
+luafile ~/.config/nvim/lua/plugin/nvim-lightbulb.lua
+luafile ~/.config/nvim/lua/plugin/nvim-comment.lua
+luafile ~/.config/nvim/lua/plugin/telescope.nvim.lua
+luafile ~/.config/nvim/lua/plugin/lazygit.nvim.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
