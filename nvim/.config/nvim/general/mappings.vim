@@ -4,6 +4,7 @@ map <Leader>qq :qall<CR>
 nmap <Leader>w :bd<CR>
 nnoremap <space>s :w<CR>
 nnoremap <space><space> :nohlsearch<CR>
+nnoremap U *
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
