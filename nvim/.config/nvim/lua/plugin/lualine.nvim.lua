@@ -2,11 +2,15 @@ local function lsp_status()
     return require('lsp-status').status()
 end
 
--- gruvbox colors
-local colors = {green = '#b8bb26', orange = '#8ec07c', red = '#fb4934'}
+-- https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
+-- Themes: oceanicnext, gruvbox, onedark, nord, dracula, nightfly
+
+-- COLORS
+-- local colors = {green = '#b8bb26', orange = '#8ec07c', red = '#fb4934'} -- gruvbox
+local colors = {green = '#99c794', orange = '#f99157', red = '#ec5f67'} -- oceanicnext
 
 require('lualine').setup({
-    options = {theme = 'gruvbox'},
+    options = {theme = 'oceanicnext'},
     extensions = {'fugitive'},
     sections = {
         lualine_a = {'mode'},
@@ -35,6 +39,3 @@ require('lualine').setup({
         -- }
     }
 })
-
--- https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
--- Themes: oceanicnext, gruvbox, onedark, nord, dracula, nightfly
