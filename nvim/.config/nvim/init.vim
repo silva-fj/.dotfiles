@@ -12,6 +12,7 @@ source ~/.config/nvim/vimscript/vim-vsnip.vim
 source ~/.config/nvim/vimscript/vim-startify.vim
 source ~/.config/nvim/vimscript/vim-fugitive.vim
 source ~/.config/nvim/vimscript/nvim-tree.vim
+source ~/.config/nvim/vimscript/rust.vim
 " source ~/.config/nvim/vimscript/undotree.vim
 " source ~/.config/nvim/vimscript/vim-which-key.vim
 
@@ -21,6 +22,7 @@ luafile ~/.config/nvim/lua/nvim-lsp/typescript_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/efm_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/json_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/lua-ls.lua
+luafile ~/.config/nvim/lua/nvim-lsp/rust_ls.lua
 
 " Lua plugins config
 luafile ~/.config/nvim/lua/plugin/lspsaga.lua

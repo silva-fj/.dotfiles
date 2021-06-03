@@ -76,6 +76,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nelsyeung/twig.vim'
 Plug 'jparise/vim-graphql'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
