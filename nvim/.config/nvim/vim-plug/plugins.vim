@@ -50,8 +50,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Git 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 " LSP
 Plug 'nvim-lua/lsp-status.nvim'
@@ -68,8 +69,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'
 Plug 'bluz71/vim-nightfly-guicolors'
-" Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'haishanh/night-owl.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
