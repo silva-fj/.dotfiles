@@ -61,6 +61,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'kosayoda/nvim-lightbulb'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
+Plug 'ray-x/lsp_signature.nvim'
 
 " Colorschemas
 Plug 'rktjmp/lush.nvim'
@@ -78,6 +79,7 @@ Plug 'nelsyeung/twig.vim'
 Plug 'jparise/vim-graphql'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
+Plug 'pantharshit00/vim-prisma'
 
 call plug#end()
 
