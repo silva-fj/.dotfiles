@@ -6,11 +6,11 @@ end
 -- Themes: oceanicnext, gruvbox, onedark, nord, dracula, nightfly
 
 -- COLORS
--- local colors = {green = '#b8bb26', orange = '#8ec07c', red = '#fb4934'} -- gruvbox
-local colors = {green = '#99c794', orange = '#f99157', red = '#ec5f67'} -- oceanicnext
+local colors = {green = '#b8bb26', orange = '#8ec07c', red = '#fb4934'} -- gruvbox
+-- local colors = {green = '#99c794', orange = '#f99157', red = '#ec5f67'} -- oceanicnext
 
 require('lualine').setup({
-    options = {theme = 'oceanicnext'},
+    options = {theme = 'gruvbox'},
     extensions = {'fugitive'},
     sections = {
         lualine_a = {'mode'},

@@ -66,6 +66,7 @@ Plug 'ray-x/lsp_signature.nvim'
 " Colorschemas
 Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
+Plug 'sainnhe/gruvbox-material'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'
