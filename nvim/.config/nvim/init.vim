@@ -13,8 +13,6 @@ source ~/.config/nvim/vimscript/vim-startify.vim
 source ~/.config/nvim/vimscript/vim-fugitive.vim
 source ~/.config/nvim/vimscript/nvim-tree.vim
 source ~/.config/nvim/vimscript/rust.vim
-" source ~/.config/nvim/vimscript/undotree.vim
-" source ~/.config/nvim/vimscript/vim-which-key.vim
 
 " LSP
 luafile ~/.config/nvim/lua/nvim-lsp/lsp_config.lua
