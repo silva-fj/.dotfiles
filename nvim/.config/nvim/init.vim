@@ -37,6 +37,7 @@ luafile ~/.config/nvim/lua/plugin/nvim-comment.lua
 luafile ~/.config/nvim/lua/plugin/telescope.nvim.lua
 luafile ~/.config/nvim/lua/plugin/lazygit.nvim.lua
 luafile ~/.config/nvim/lua/plugin/gitsigns.lua
+luafile ~/.config/nvim/lua/plugin/nvim-web-devicons.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
