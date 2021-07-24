@@ -78,6 +78,7 @@ Plug 'jparise/vim-graphql'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
 Plug 'pantharshit00/vim-prisma'
+Plug 'tomlion/vim-solidity'
 
 call plug#end()
 
