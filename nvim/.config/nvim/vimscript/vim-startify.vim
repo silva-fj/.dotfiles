@@ -14,6 +14,9 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [ 
     \ {'c': '~/.dotfiles/nvim/.config/nvim/init.vim'}, 
-    \ {'s': '~/.dotfiles/nvim/.config/nvim/coc-settings.json'}, 
-    \ {'t': '~/.zshrc'},
+    \ {'a': '~/.dotfiles/alacritty/.config/alacritty/alacritty.yml'},
+    \ {'z': '~/.dotfiles/zsh/.zshrc'},
     \ ]
+
+let g:startify_custom_header =
+    \ startify#pad(split(system('figlet -f standard -w 200 Neovim 0.5'), '\n'))
