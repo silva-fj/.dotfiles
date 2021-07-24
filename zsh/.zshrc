@@ -117,6 +117,12 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    autoload -Uz compinit
+    compinit
+fi
+
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
   if [ -x "$(command -v nvr)" ]; then
     alias nvim=nvr
