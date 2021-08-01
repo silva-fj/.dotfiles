@@ -15,3 +15,8 @@ autocmd BufWritePre *.js lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()
+
+augroup highlight_yank
+  autocmd!
+  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+augroup END
