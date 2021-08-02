@@ -27,5 +27,5 @@ inoremap ? ?<c-g>u
 inoremap { {<c-g>u
 inoremap [ [<c-g>u
 inoremap ( (<c-g>u
-inoremap <space> <space><c-g>u
-inoremap <cr> <cr><c-g>u
+" inoremap <space> <space><c-g>u
+" inoremap <cr> <cr><c-g>u
