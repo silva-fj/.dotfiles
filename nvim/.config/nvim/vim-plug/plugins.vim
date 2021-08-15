@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 " General utils
-Plug 'airblade/vim-rooter'
+Plug 'ahmedkhalf/project.nvim'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tyru/open-browser.vim'
