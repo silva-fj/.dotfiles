@@ -12,6 +12,7 @@ let g:nvim_tree_tab_open = 1
 let g:nvim_tree_width_allow_resize  = 1
 let g:nvim_tree_disable_netrw = 0
 let g:nvim_tree_hijack_netrw = 0
+let g:nvim_tree_lsp_diagnostics = 1
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
