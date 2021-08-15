@@ -70,6 +70,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'haishanh/night-owl.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'tomasiser/vim-code-dark'
 
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

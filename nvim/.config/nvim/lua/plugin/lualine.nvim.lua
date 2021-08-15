@@ -6,11 +6,12 @@ end
 -- Themes: oceanicnext, gruvbox, onedark, nord, dracula, nightfly
 
 -- COLORS
-local colors = {green = '#b8bb26', orange = '#8ec07c', red = '#fb4934'} -- gruvbox
--- local colors = {green = '#99c794', orange = '#f99157', red = '#ec5f67'} -- oceanicnext
+-- local colors = {added = '#b8bb26', modified = '#8ec07c', removed = '#fb4934'} -- gruvbox
+-- local gitColors = {added = '#99c794', modified = '#f99157', removed = '#ec5f67'} -- oceanicnext
+local gitColors = {added = '#4EC9B0', modified = '#9CDCFE', removed = '#F44747'} -- codedark
 
 require('lualine').setup({
-    options = {theme = 'gruvbox'},
+    options = {theme = 'codedark'},
     extensions = {'fugitive'},
     sections = {
         lualine_a = {'mode'},
@@ -18,9 +19,9 @@ require('lualine').setup({
             {'branch', icon = ''}, {
                 'diff',
                 symbols = {added = ' ', modified = ' ', removed = ' '},
-                color_added = colors.green,
-                color_modified = colors.orange,
-                color_removed = colors.red
+                color_added = gitColors.added,
+                color_modified = gitColors.modified,
+                color_removed = gitColors.removed
             }
         },
         lualine_c = {{'filename', full_path = true}},
