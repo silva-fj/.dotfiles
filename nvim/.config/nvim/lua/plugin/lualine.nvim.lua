@@ -3,15 +3,15 @@ local function lsp_status()
 end
 
 -- https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
--- Themes: oceanicnext, gruvbox, onedark, nord, dracula, nightfly
+-- Themes: oceanicnext, gruvbox, onedark, nord, dracula, nightfly, codedark
 
 -- COLORS
--- local colors = {added = '#b8bb26', modified = '#8ec07c', removed = '#fb4934'} -- gruvbox
+local gitColors = {added = '#b8bb26', modified = '#8ec07c', removed = '#fb4934'} -- gruvbox
 -- local gitColors = {added = '#99c794', modified = '#f99157', removed = '#ec5f67'} -- oceanicnext
-local gitColors = {added = '#4EC9B0', modified = '#9CDCFE', removed = '#F44747'} -- codedark
+-- local gitColors = {added = '#4EC9B0', modified = '#9CDCFE', removed = '#F44747'} -- codedark
 
 require('lualine').setup({
-    options = {theme = 'codedark'},
+    options = {theme = 'gruvbox'},
     extensions = {'fugitive'},
     sections = {
         lualine_a = {'mode'},
