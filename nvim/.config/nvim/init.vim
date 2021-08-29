@@ -21,6 +21,7 @@ luafile ~/.config/nvim/lua/nvim-lsp/efm_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/json_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/lua-ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/rust_ls.lua
+luafile ~/.config/nvim/lua/nvim-lsp/rust_ls.lua
 
 " Lua plugins config
 luafile ~/.config/nvim/lua/plugin/lspsaga.lua
@@ -37,6 +38,8 @@ luafile ~/.config/nvim/lua/plugin/lazygit.nvim.lua
 luafile ~/.config/nvim/lua/plugin/gitsigns.lua
 luafile ~/.config/nvim/lua/plugin/nvim-web-devicons.lua
 luafile ~/.config/nvim/lua/plugin/project.nvim.lua
+luafile ~/.config/nvim/lua/plugin/trouble.nvim.lua
+luafile ~/.config/nvim/lua/plugin/lsp-colors.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
