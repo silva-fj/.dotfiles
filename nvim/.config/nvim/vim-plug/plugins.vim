@@ -27,7 +27,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
-" Status line ans status bar
+" Status line and status bar
 Plug 'romgrk/barbar.nvim'
 Plug 'hoob3rt/lualine.nvim'
 
@@ -36,7 +36,7 @@ Plug 'hoob3rt/lualine.nvim'
 
 " Snippets
 Plug 'alDuncanson/react-hooks-snippets'
-Plug 'Neevash/awesome-flutter-snippets'
+" Plug 'Neevash/awesome-flutter-snippets'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
@@ -49,6 +49,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'kdheepak/lazygit.nvim'
+" Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 
 " LSP
@@ -59,8 +60,10 @@ Plug 'kosayoda/nvim-lightbulb'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'folke/trouble.nvim'
 
 " Colorschemas
+Plug 'folke/lsp-colors.nvim'
 Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
 Plug 'sainnhe/gruvbox-material'
@@ -74,11 +77,10 @@ Plug 'tomasiser/vim-code-dark'
 
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nelsyeung/twig.vim'
 Plug 'jparise/vim-graphql'
-Plug 'mustache/vim-mustache-handlebars'
+" Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
-Plug 'pantharshit00/vim-prisma'
+" Plug 'pantharshit00/vim-prisma'
 Plug 'tomlion/vim-solidity'
 
 call plug#end()
