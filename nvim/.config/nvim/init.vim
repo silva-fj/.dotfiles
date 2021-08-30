@@ -25,7 +25,7 @@ luafile ~/.config/nvim/lua/nvim-lsp/rust_ls.lua
 
 " Lua plugins config
 luafile ~/.config/nvim/lua/plugin/lspsaga.lua
-luafile ~/.config/nvim/lua/plugin/nvim-compe.lua
+luafile ~/.config/nvim/lua/plugin/cmp.lua
 luafile ~/.config/nvim/lua/plugin/nvim-treesitter.lua
 luafile ~/.config/nvim/lua/plugin/lualine.nvim.lua
 luafile ~/.config/nvim/lua/plugin/nvim-ts-autotag.lua
