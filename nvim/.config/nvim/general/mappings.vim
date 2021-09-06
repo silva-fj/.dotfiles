@@ -15,9 +15,9 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Keep it centered
-" nnoremap n nzzzv
-" nnoremap N Nzzzv
-" nnoremap J mzJ`z
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
 
 " Undo break points
 " inoremap , ,<c-g>u
