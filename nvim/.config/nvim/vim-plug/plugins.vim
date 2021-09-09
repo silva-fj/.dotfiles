@@ -17,6 +17,7 @@ Plug 'mhinz/vim-startify'
 Plug 'windwp/nvim-autopairs'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'terrortylor/nvim-comment'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " File explorer
 Plug 'kyazdani42/nvim-tree.lua'
