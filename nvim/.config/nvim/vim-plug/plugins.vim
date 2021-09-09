@@ -16,7 +16,7 @@ Plug 'tyru/open-browser.vim'
 Plug 'mhinz/vim-startify'
 Plug 'windwp/nvim-autopairs'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-Plug 'terrortylor/nvim-comment'
+Plug 'b3nj5m1n/kommentary'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " File explorer

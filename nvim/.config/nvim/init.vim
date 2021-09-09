@@ -32,7 +32,7 @@ luafile ~/.config/nvim/lua/plugin/nvim-ts-autotag.lua
 luafile ~/.config/nvim/lua/plugin/lspkind-nvim.lua
 luafile ~/.config/nvim/lua/plugin/nvim-autopairs.lua
 luafile ~/.config/nvim/lua/plugin/nvim-lightbulb.lua
-luafile ~/.config/nvim/lua/plugin/nvim-comment.lua
+luafile ~/.config/nvim/lua/plugin/kommentary.lua
 luafile ~/.config/nvim/lua/plugin/telescope.nvim.lua
 luafile ~/.config/nvim/lua/plugin/lazygit.nvim.lua
 luafile ~/.config/nvim/lua/plugin/gitsigns.lua
