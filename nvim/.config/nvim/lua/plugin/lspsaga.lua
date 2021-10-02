@@ -19,3 +19,5 @@ vim.api.nvim_set_keymap("n", "]g", "<cmd>lua require'lspsaga.diagnostic'.lsp_jum
                         {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "[g", "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>",
                         {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<C-s>", "<cmd>lua require'lspsaga.signaturehelp'.signature_help()<CR>",
+                        {noremap = true, silent = true})
