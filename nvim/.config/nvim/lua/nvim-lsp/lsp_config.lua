@@ -9,7 +9,7 @@ vim.fn.sign_define("LspDiagnosticsSignHint",
 
 local lspconfig = require('lspconfig')
 local lsp_status = require('nvim-lsp/lsp_status')
-local lsp_signature = require('lsp_signature')
+-- local lsp_signature = require('lsp_signature')
 
 local lsp_config = {}
 
@@ -17,7 +17,7 @@ function lsp_config.on_attach(client, bufnr)
     print("LSP started.");
 
     lsp_status.on_attach(client, bufnr)
-    lsp_signature.on_attach({use_lspsaga = true})
+    -- lsp_signature.on_attach({use_lspsaga = false})
 
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
