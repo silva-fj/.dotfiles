@@ -10,13 +10,13 @@ let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 
 " [ Color Schemes - Themes ]
-colorscheme gruvbox
+" colorscheme gruvbox
 " colorscheme onedark
 " colorscheme nord
 " colorscheme dracula
 " colorscheme night-owl
 " colorscheme nightfly
-" colorscheme codedark
+colorscheme codedark
 
 " Gruvbox Material Theme
 " let g:gruvbox_material_palette = 'original'
