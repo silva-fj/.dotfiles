@@ -17,7 +17,7 @@ function lsp_config.on_attach(client, bufnr)
     print("LSP started.");
 
     lsp_status.on_attach(client, bufnr)
-    -- lsp_signature.on_attach({use_lspsaga = false})
+    -- lsp_signature.on_attach()
 
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
