@@ -21,7 +21,7 @@ luafile ~/.config/nvim/lua/nvim-lsp/efm_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/json_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/lua-ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/rust_ls.lua
-luafile ~/.config/nvim/lua/nvim-lsp/rust_ls.lua
+luafile ~/.config/nvim/lua/nvim-lsp/clangd_ls.lua
 
 " Lua plugins config
 luafile ~/.config/nvim/lua/plugin/lspsaga.lua

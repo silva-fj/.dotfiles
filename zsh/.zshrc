@@ -87,6 +87,7 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="$PATH:/Users/franciscosilva/Library/Python/3.7/bin"
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
