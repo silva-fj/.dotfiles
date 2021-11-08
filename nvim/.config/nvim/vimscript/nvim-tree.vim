@@ -1,8 +1,6 @@
 let g:nvim_tree_width = 40
-let g:nvim_tree_ignore = ['.git', '.cache']
 let g:nvim_tree_auto_ignore_ft = ['startify']
 let g:nvim_tree_indent_markers = 1
-let g:nvim_tree_hide_dotfiles = 0
 let g:nvim_tree_git_hl = 1
 let g:nvim_tree_root_folder_modifier = ':~'
 let g:nvim_tree_width_allow_resize  = 1
@@ -128,6 +126,9 @@ lua <<EOF
           -- list of mappings to set on the tree manually
           list = mappingsList
         }
+      },
+      filters = {
+          dotfiles = true,
       }
     }
 EOF
