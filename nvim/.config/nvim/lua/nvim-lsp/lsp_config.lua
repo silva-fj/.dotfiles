@@ -32,8 +32,6 @@ function lsp_config.on_attach(client, bufnr)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
     buf_set_keymap('n', '<space>d', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    -- buf_set_keymap('n', 'gE', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    -- buf_set_keymap('n', 'ge', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
@@ -60,7 +58,7 @@ capabilities = vim.tbl_extend('keep', capabilities or {}, cmpCapabilities)
 lsp_config.capabilities = capabilities
 
 -- Use a loop to conveniently both setup defined servers and map buffer local keybindings when the language server attaches
-local servers = {"cssls", "intelephense", "vimls", "yamlls", "html"}
+local servers = {"cssls", "intelephense", "vimls", "yamlls", "html", "eslint"}
 
 for _, lsp in ipairs(servers) do lspconfig[lsp].setup {on_attach = lsp_config.on_attach, capabilities = capabilities} end
 
