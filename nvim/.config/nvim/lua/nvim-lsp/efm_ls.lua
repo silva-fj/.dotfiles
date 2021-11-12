@@ -16,8 +16,8 @@ require'lspconfig'.efm.setup {
     end,
     init_options = {documentFormatting = true, codeAction = false},
     filetypes = {
-        "lua", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescript.tsx", "typescriptreact",
-        "yaml", "html", "css", "json"
+        "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescript.tsx", "typescriptreact", "yaml",
+        "html", "css", "json", "lua"
     },
     settings = {
         rootMarkers = {".git/"},
