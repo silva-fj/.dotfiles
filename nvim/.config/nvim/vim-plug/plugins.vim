@@ -72,7 +72,7 @@ Plug 'folke/trouble.nvim'
 " Colorschemas
 Plug 'folke/lsp-colors.nvim'
 Plug 'rktjmp/lush.nvim'
-Plug 'npxbr/gruvbox.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
