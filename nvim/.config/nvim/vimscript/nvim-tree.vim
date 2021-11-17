@@ -34,7 +34,7 @@ nnoremap <leader>R :NvimTreeRefresh<CR>
 nnoremap <leader>F :NvimTreeFindFile<CR>
 
 " a list of groups can be found at `:help nvim_tree_highlight`
-highlight NvimTreeFolderIcon guibg=blue
+" highlight NvimTreeFolderIcon guibg=blue
 
 lua <<EOF
     local tree_cb = require'nvim-tree.config'.nvim_tree_callback
