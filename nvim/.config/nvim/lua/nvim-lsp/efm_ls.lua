@@ -13,6 +13,7 @@ require'lspconfig'.efm.setup {
         print("LSP efm started.");
         client.resolved_capabilities.document_formatting = true
         client.resolved_capabilities.goto_definition = false
+        vim.api.nvim_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true})
     end,
     init_options = {documentFormatting = true, codeAction = false},
     filetypes = {
@@ -42,4 +43,3 @@ require'lspconfig'.efm.setup {
     }
 }
 
-vim.api.nvim_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true})
