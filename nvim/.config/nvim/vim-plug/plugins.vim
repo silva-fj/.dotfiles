@@ -19,6 +19,9 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'b3nj5m1n/kommentary'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+" Github Copilot
+Plug 'github/copilot.vim'
+
 " File explorer
 Plug 'kyazdani42/nvim-tree.lua'
 

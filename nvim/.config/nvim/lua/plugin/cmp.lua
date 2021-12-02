@@ -28,7 +28,7 @@ cmp.setup {
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'}),
+        -- ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'}),
         ['<CR>'] = cmp.mapping({i = cmp.mapping.confirm({select = true}), c = cmp.mapping.confirm({select = false})})
     },
     sources = {{name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'path'}, {name = 'nvim_lua'}}
