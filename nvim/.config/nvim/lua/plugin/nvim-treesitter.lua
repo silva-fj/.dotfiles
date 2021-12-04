@@ -5,5 +5,5 @@ require'nvim-treesitter.configs'.setup {
         disable = {"c", "rust"} -- list of language that will be disabled
     },
     indent = {enable = true},
-    context_commentstring = {enable = true}
+    context_commentstring = {enable = true, enable_autocmd = false}
 }
