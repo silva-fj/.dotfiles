@@ -1,9 +1,3 @@
-local eslint = {
-    lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
-    lintStdin = true,
-    lintIgnoreExitCode = true
-}
-
 local prettier = {formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}", formatStdin = true}
 local prettier_global = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
 
@@ -29,12 +23,12 @@ require'lspconfig'.efm.setup {
                     formatStdin = true
                 }
             },
-            javascript = {eslint, prettier},
-            javascriptreact = {eslint, prettier},
-            ["javascript.jsx"] = {eslint, prettier},
-            typescript = {eslint, prettier},
-            ["typescript.tsx"] = {eslint, prettier},
-            typescriptreact = {eslint, prettier},
+            javascript = {prettier},
+            javascriptreact = {prettier},
+            ["javascript.jsx"] = {prettier},
+            typescript = {prettier},
+            ["typescript.tsx"] = {prettier},
+            typescriptreact = {prettier},
             yaml = {prettier_global},
             html = {prettier_global},
             css = {prettier_global},
