@@ -1,9 +1,16 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export TERM="xterm-256color"
 
 DEFAULT_USER=$USER
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/franciscosilva/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -22,12 +29,10 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git z zsh-autosuggestions
+  git z zsh-autosuggestions zsh-nvm zsh-better-npm-completion zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -47,8 +52,9 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh //this is super slow
-source /usr/local/opt/nvm/nvm.sh --no-use
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -70,28 +76,29 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-alias android-emulator="$ANDROID_HOME/emulator/emulator"
-alias lg='lazygit'
-
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_NDK_HOME=""
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export PATH="$PATH:/Users/franciscosilva/Development/flutter/bin"
+export PATH="$PATH:$HOME/Development/flutter/bin"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 export GEM_HOME="$HOME/.gem"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-export PATH="$PATH:/Users/franciscosilva/Library/Python/3.7/bin"
-export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+alias luamake=$HOME/.dotfiles/nvim/.config/nvim/lua-language-server/3rd/luamake/luamake
+alias android-emulator="$ANDROID_HOME/emulator/emulator"
+alias lg='lazygit'
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Changes the ulimit limits.
-# ulimit -n 4096      # Increase open files.
-# ulimit -l unlimited # Increase max locked memory.
-# sudo launchctl limit maxfiles 10240 unlimited
+ulimit -n 10240     # Increase open files.
+ulimit -l unlimited # Increase max locked memory.
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
