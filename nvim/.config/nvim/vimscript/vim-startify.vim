@@ -19,4 +19,4 @@ let g:startify_bookmarks = [
     \ ]
 
 let g:startify_custom_header =
-    \ startify#pad(split(system('figlet -f standard -w 200 Neovim 0.5'), '\n'))
+    \ startify#pad(split(system('figlet -f standard -w 200 Neovim 0.6'), '\n'))
