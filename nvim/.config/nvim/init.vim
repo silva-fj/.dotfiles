@@ -41,6 +41,7 @@ luafile ~/.config/nvim/lua/plugin/project.nvim.lua
 luafile ~/.config/nvim/lua/plugin/trouble.nvim.lua
 luafile ~/.config/nvim/lua/plugin/lsp-colors.lua
 luafile ~/.config/nvim/lua/plugin/indent-blankline.nvim.lua
+luafile ~/.config/nvim/lua/plugin/flutter-tools.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim

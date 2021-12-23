@@ -37,7 +37,7 @@ Plug 'hoob3rt/lualine.nvim'
 
 " Snippets
 Plug 'alDuncanson/react-hooks-snippets'
-" Plug 'Neevash/awesome-flutter-snippets'
+Plug 'Neevash/awesome-flutter-snippets'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
@@ -89,6 +89,8 @@ Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
 " Plug 'pantharshit00/vim-prisma'
 Plug 'tomlion/vim-solidity'
+
+Plug 'akinsho/flutter-tools.nvim'
 
 call plug#end()
 
