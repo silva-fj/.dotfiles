@@ -28,8 +28,22 @@ cmp.setup {
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'}),
+        -- ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'}),
+        ['<Tab>'] = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end,
         ['<CR>'] = cmp.mapping({i = cmp.mapping.confirm({select = true}), c = cmp.mapping.confirm({select = false})})
     },
-    sources = {{name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'path'}, {name = 'nvim_lua'}}
+    sources = cmp.config.sources({
+        {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'path'}, {name = 'nvim_lua'},
+        {name = 'cmp-nvim-lsp-signature-help'}
+    })
 }
+
+cmp.setup.cmdline('/', {sources = {{name = 'buffer'}}})
+
+cmp.setup.cmdline(':', {sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}})})
