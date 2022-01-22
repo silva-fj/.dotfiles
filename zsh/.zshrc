@@ -15,7 +15,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 HIST_STAMPS="yyyy-mm-dd"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
@@ -33,6 +33,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
