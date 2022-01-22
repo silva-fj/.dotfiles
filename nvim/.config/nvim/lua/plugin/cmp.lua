@@ -39,8 +39,7 @@ cmp.setup {
         ['<CR>'] = cmp.mapping({i = cmp.mapping.confirm({select = true}), c = cmp.mapping.confirm({select = false})})
     },
     sources = cmp.config.sources({
-        {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'path'}, {name = 'nvim_lua'},
-        {name = 'cmp-nvim-lsp-signature-help'}
+        {name = 'nvim_lsp'}, {name = 'vsnip'}, {name = 'buffer'}, {name = 'path'}, {name = 'nvim_lua'}
     })
 }
 
