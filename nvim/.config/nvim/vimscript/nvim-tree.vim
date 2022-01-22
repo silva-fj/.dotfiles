@@ -128,7 +128,7 @@ lua <<EOF
         }
       },
       filters = {
-          dotfiles = true,
+          dotfiles = false,
       }
     }
 EOF
