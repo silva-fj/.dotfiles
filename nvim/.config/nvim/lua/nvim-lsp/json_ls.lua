@@ -2,8 +2,9 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local on_attach = function()
+local on_attach = function(client)
     vim.api.nvim_set_keymap("n", "ff", "<cmd>Format<CR>", {noremap = true})
+    require'illuminate'.on_attach(client)
     print("LSP started. (json)");
 end
 

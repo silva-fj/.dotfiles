@@ -85,6 +85,7 @@ Plug 'Mofiqul/vscode.nvim'
 
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'RRethy/vim-illuminate'
 Plug 'jparise/vim-graphql'
 " Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
