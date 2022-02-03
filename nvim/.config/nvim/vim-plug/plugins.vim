@@ -69,6 +69,7 @@ Plug 'tami5/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'folke/trouble.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " Colorschemas
 Plug 'folke/lsp-colors.nvim'
