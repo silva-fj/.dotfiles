@@ -51,7 +51,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'kdheepak/lazygit.nvim'
-" Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 
 " LSP
@@ -89,9 +88,7 @@ Plug 'Mofiqul/vscode.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'RRethy/vim-illuminate'
 Plug 'jparise/vim-graphql'
-" Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
-" Plug 'pantharshit00/vim-prisma'
 Plug 'tomlion/vim-solidity'
 
 Plug 'akinsho/flutter-tools.nvim'
