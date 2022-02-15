@@ -43,12 +43,4 @@ require("lspconfig").efm.setup({
 			json = { prettier_global },
 		},
 	},
-})			["typescript.tsx"] = { prettier },
-			typescriptreact = { prettier },
-			yaml = { prettier_global },
-			html = { prettier_global },
-			css = { prettier_global },
-			json = { prettier_global },
-		},
-	},
 })
