@@ -38,10 +38,10 @@ Plug 'hoob3rt/lualine.nvim'
 
 " Snippets
 Plug 'alDuncanson/react-hooks-snippets'
+Plug 'franjs/react-native-snippet'
 Plug 'Neevash/awesome-flutter-snippets'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
