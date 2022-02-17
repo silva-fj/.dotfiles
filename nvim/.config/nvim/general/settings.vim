@@ -21,7 +21,7 @@ set nowritebackup
 set shortmess+=c
 set signcolumn=yes
 set hidden
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set noerrorbells
 " set nowrap
