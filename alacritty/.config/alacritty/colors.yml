@@ -219,4 +219,4 @@ schemes:
       white: '0x8a889d'
 
 # Colors
-colors: *solarized_dark
+colors: *oceanic_next
