@@ -83,6 +83,7 @@ Plug 'haishanh/night-owl.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'Mofiqul/vscode.nvim'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

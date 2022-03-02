@@ -17,6 +17,7 @@ let g:enable_italic_font = 1
 " colorscheme night-owl
 " colorscheme nightfly
 " colorscheme codedark
+" colorscheme embark
 
 " Gruvbox Material Theme
 " let g:gruvbox_material_palette = 'original'
