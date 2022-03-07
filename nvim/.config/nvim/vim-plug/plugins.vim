@@ -84,6 +84,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
