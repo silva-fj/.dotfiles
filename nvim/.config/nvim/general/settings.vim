@@ -1,7 +1,6 @@
 syntax on
 set autoread
 set smarttab
-set cindent
 set autowrite
 set wildmenu
 set si
