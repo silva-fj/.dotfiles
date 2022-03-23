@@ -1,4 +1,8 @@
-local nvim_lsp = require("lspconfig")
+require("rust-tools").setup({})
+
+vim.api.nvim_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
+
+--[[ local nvim_lsp = require("lspconfig")
 
 local on_attach = function(client)
 	vim.api.nvim_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
@@ -6,4 +10,4 @@ local on_attach = function(client)
 	print("LSP rust_analyzer started.")
 end
 
-nvim_lsp.rust_analyzer.setup({ on_attach = on_attach })
+nvim_lsp.rust_analyzer.setup({ on_attach = on_attach }) ]]
