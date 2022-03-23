@@ -94,6 +94,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'tomlion/vim-solidity'
 
 Plug 'akinsho/flutter-tools.nvim'
+Plug 'simrat39/rust-tools.nvim'
 
 call plug#end()
 
