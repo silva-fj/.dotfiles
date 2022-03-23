@@ -1,3 +1,7 @@
+# Fig pre block. Keep at the top of this file.
+export PATH="${PATH}:${HOME}/.local/bin"
+eval "$(fig init zsh pre)"
+
 export TERM="xterm-256color"
 
 DEFAULT_USER=$USER
@@ -60,3 +64,7 @@ ulimit -n 10240     # Increase open files.
 ulimit -l unlimited # Increase max locked memory.
 
 eval "$(starship init zsh)"
+
+# Fig post block. Keep at the bottom of this file.
+eval "$(fig init zsh post)"
+
