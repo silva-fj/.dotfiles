@@ -18,7 +18,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'b3nj5m1n/kommentary'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'ThePrimeagen/refactoring.nvim'
+" Plug 'ThePrimeagen/refactoring.nvim'
 
 " File explorer
 Plug 'kyazdani42/nvim-tree.lua'
