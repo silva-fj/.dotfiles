@@ -11,7 +11,6 @@ source ~/.config/nvim/vim-plug/plugins.vim
 source ~/.config/nvim/vimscript/vim-vsnip.vim
 source ~/.config/nvim/vimscript/vim-startify.vim
 source ~/.config/nvim/vimscript/vim-fugitive.vim
-source ~/.config/nvim/vimscript/rust.vim
 
 " LSP
 luafile ~/.config/nvim/lua/nvim-lsp/lsp_config.lua
