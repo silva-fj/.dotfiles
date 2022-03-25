@@ -10,7 +10,6 @@ source ~/.config/nvim/vim-plug/plugins.vim
 " Plugin Config
 source ~/.config/nvim/vimscript/vim-vsnip.vim
 source ~/.config/nvim/vimscript/vim-startify.vim
-source ~/.config/nvim/vimscript/vim-fugitive.vim
 
 " LSP
 luafile ~/.config/nvim/lua/nvim-lsp/lsp_config.lua
@@ -41,6 +40,7 @@ luafile ~/.config/nvim/lua/plugin/lsp-colors.lua
 luafile ~/.config/nvim/lua/plugin/indent-blankline.nvim.lua
 luafile ~/.config/nvim/lua/plugin/flutter-tools.lua
 luafile ~/.config/nvim/lua/plugin/nvim-tree.lua
+luafile ~/.config/nvim/lua/plugin/vim-fugitive.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
