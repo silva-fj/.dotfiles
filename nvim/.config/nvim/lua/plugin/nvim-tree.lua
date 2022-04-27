@@ -35,7 +35,6 @@ vim.g.nvim_tree_show_icons = {
 vim.g.nvim_tree_width = 40
 vim.g.nvim_tree_auto_ignore_ft = { "startify" }
 vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ":~"
 vim.g.nvim_tree_width_allow_resize = 1
@@ -96,6 +95,16 @@ require("nvim-tree").setup({
 	hijack_cursor = false,
 	-- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
 	update_cwd = false,
+	renderer = {
+		indent_markers = {
+			enable = true,
+			icons = {
+				corner = "└ ",
+				edge = "│ ",
+				none = "  ",
+			},
+		},
+	},
 	-- show lsp diagnostics in the signcolumn
 	diagnostics = {
 		enable = true,
