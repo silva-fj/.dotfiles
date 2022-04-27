@@ -1,9 +1,9 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	ensure_installed = "all", -- A list of parser names, or "all"
 	highlight = {
 		enable = true,
 	},
 	indent = { enable = true },
 	context_commentstring = { enable = true, enable_autocmd = false },
-	ignore_install = { "vala" },
+	ignore_install = { "vala", "swift" },
 })
