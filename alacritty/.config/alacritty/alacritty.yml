@@ -6,8 +6,8 @@ import:
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 window:
   dimensions:
-    columns: 260
-    lines: 80
+    columns: 240
+    lines: 70
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
