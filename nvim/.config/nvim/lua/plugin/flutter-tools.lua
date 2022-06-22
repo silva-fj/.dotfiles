@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap("n", "<leader>r", ":FlutterRun<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>rr", ":FlutterRestart<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>d", ":FlutterDevices<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>D", ":FlutterDevices<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>G", ":FlutterPubGet<CR>", opts)
 
 -- LSP Mappings
