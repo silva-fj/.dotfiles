@@ -41,6 +41,7 @@ luafile ~/.config/nvim/lua/plugin/indent-blankline.nvim.lua
 luafile ~/.config/nvim/lua/plugin/flutter-tools.lua
 luafile ~/.config/nvim/lua/plugin/nvim-tree.lua
 luafile ~/.config/nvim/lua/plugin/vim-fugitive.lua
+luafile ~/.config/nvim/lua/plugin/goto-preview.lua
 
 " General settings
 source ~/.config/nvim/general/settings.vim
