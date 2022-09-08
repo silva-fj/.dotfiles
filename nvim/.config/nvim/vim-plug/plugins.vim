@@ -34,7 +34,7 @@ Plug 'romgrk/barbar.nvim'
 Plug 'hoob3rt/lualine.nvim'
 
 " Tags
- Plug 'windwp/nvim-ts-autotag'
+Plug 'windwp/nvim-ts-autotag'
 
 " Snippets
 Plug 'alDuncanson/react-hooks-snippets'
