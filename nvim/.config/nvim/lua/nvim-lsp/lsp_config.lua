@@ -39,24 +39,24 @@ function lsp_config.on_attach(client, bufnr)
 	-- buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 	buf_set_keymap("n", "<space>d", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-	buf_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+	buf_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
-		vim.api.nvim_exec(
-			[[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
-      hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]],
-			false
-		)
-	end
+	-- if client.resolved_capabilities.document_highlight then
+	-- vim.api.nvim_exec(
+	-- [[
+	-- hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
+	-- hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
+	-- hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
+	-- augroup lsp_document_highlight
+	-- autocmd! * <buffer>
+	-- autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+	-- autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+	-- augroup END
+	-- ]],
+	-- false
+	-- )
+	-- end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

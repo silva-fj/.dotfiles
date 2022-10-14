@@ -21,7 +21,12 @@ table.insert(runtime_path, "lua/?/init.lua")
 require("lspconfig").sumneko_lua.setup({
 	on_attach = function(client)
 		require("illuminate").on_attach(client)
-		vim.api.nvim_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap(
+			"n",
+			"ff",
+			"<cmd>lua vim.lsp.buf.format { async = true }<CR>",
+			{ noremap = true, silent = true }
+		)
 		print("LSP lua started.")
 	end,
 	cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },

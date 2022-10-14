@@ -5,8 +5,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local on_attach = function(client)
 	vim.api.nvim_set_keymap("n", "ff", "<cmd>Format<CR>", { noremap = true })
 	require("illuminate").on_attach(client)
-	client.resolved_capabilities.document_formatting = false
-	client.resolved_capabilities.document_range_formatting = false
+	client.server_capabilities.documentFormattingProvider = false
+	client.server_capabilities.documentRangeFormattingProvider = false
+
 	print("LSP started. (json)")
 end
 
@@ -15,13 +16,13 @@ require("lspconfig").jsonls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "json", "jsonc" },
-	commands = {
+	--[[ commands = {
 		Format = {
 			function()
 				vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
 			end,
 		},
-	},
+	}, ]]
 
 	settings = {
 		json = {
