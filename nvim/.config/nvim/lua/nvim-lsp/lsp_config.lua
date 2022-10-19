@@ -62,7 +62,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = vim.tbl_extend("keep", capabilities or {}, lsp_status.get_capabilities())
-local cmpCapabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+local cmpCapabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 capabilities = vim.tbl_extend("keep", capabilities or {}, cmpCapabilities)
 
 lsp_config.capabilities = capabilities
