@@ -52,6 +52,7 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 alias luamake=$HOME/.dotfiles/nvim/.config/nvim/lua-language-server/3rd/luamake/luamake
 alias android-emulator="$ANDROID_HOME/emulator/emulator"
 alias lg='lazygit'
+alias pn=pnpm
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
