@@ -21,6 +21,7 @@ luafile ~/.config/nvim/lua/nvim-lsp/clangd_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/null_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/tailwindcss_ls.lua
 luafile ~/.config/nvim/lua/nvim-lsp/docker_ls.lua
+luafile ~/.config/nvim/lua/nvim-lsp/go_ls.lua
 
 " Lua plugins config
 luafile ~/.config/nvim/lua/plugin/lspsaga.lua
