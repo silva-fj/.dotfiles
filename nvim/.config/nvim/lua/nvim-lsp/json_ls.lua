@@ -3,7 +3,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(client)
-	vim.api.nvim_set_keymap("n", "ff", "<cmd>Format<CR>", { noremap = true })
+	vim.api.nvim_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
+
+	-- vim.api.nvim_set_keymap("n", "ff", "<cmd>Format<CR>", { noremap = true })
 	require("illuminate").on_attach(client)
 	client.server_capabilities.documentFormattingProvider = false
 	client.server_capabilities.documentRangeFormattingProvider = false
