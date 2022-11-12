@@ -52,8 +52,6 @@ luafile ~/.config/nvim/lua/plugin/vim-fugitive.lua
 luafile ~/.config/nvim/lua/plugin/goto-preview.lua
 
 " General settings
-" source ~/.config/nvim/general/settings.vim
 source ~/.config/nvim/general/theme.vim
-" source ~/.config/nvim/general/mappings.vim
 source ~/.config/nvim/general/auto-commands.vim
 source ~/.config/nvim/general/neovim-terminal.vim
