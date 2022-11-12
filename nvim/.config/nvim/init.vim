@@ -13,6 +13,7 @@ source ~/.config/nvim/vimscript/vim-startify.vim
 
 " Lua
 luafile ~/.config/nvim/lua/settings.lua
+luafile ~/.config/nvim/lua/keymaps.lua
 
 " LSP
 luafile ~/.config/nvim/lua/nvim-lsp/lsp_config.lua
@@ -53,6 +54,6 @@ luafile ~/.config/nvim/lua/plugin/goto-preview.lua
 " General settings
 " source ~/.config/nvim/general/settings.vim
 source ~/.config/nvim/general/theme.vim
-source ~/.config/nvim/general/mappings.vim
+" source ~/.config/nvim/general/mappings.vim
 source ~/.config/nvim/general/auto-commands.vim
 source ~/.config/nvim/general/neovim-terminal.vim
