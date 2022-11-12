@@ -6,14 +6,14 @@ end
 -- Themes: oceanicnext, gruvbox, onedark, nord, dracula, nightfly, codedark, vscode
 
 -- COLORS
--- local gitColors = { added = "#b8bb26", modified = "#8ec07c", removed = "#fb4934" } -- gruvbox
-local gitColors = { added = "#99c794", modified = "#f99157", removed = "#ec5f67" } -- oceanicnext
+local gitColors = { added = "#b8bb26", modified = "#8ec07c", removed = "#fb4934" } -- gruvbox
+-- local gitColors = { added = "#99c794", modified = "#f99157", removed = "#ec5f67" } -- oceanicnext
 -- local gitColors = {added = '#4EC9B0', modified = '#9CDCFE', removed = '#F44747'} -- codedark
 -- local gitColors = { added = "#4B5632", modified = "#264F78", removed = "#FB0101" } -- vscode
 -- local gitColors = { added = "#164846", modified = "#394b70", removed = "#823c41" } -- tokyonight
 
 require("lualine").setup({
-	options = { theme = "oceanicnext" },
+	options = { theme = "gruvbox" },
 	extensions = { "fugitive" },
 	sections = {
 		lualine_a = { "mode" },
