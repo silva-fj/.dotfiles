@@ -16,6 +16,9 @@ map("n", "<A-j", "<Esc>:m .+1<cr>==gi", options)
 map("n", "<A-k", "<Esc>:m .-2<cr>==gi", options)
 map("n", "<A-j", ":m '>+1<cr>gv=gv", options)
 map("n", "<A-k", ":m '<-2<cr>gv=gv", options)
+map("n", "<C-u>", "<C-u>zz", options)
+map("n", "<C-d>", "<C-d>zz", options)
+map("n", "n", "nzz", options)
 
 -- Keep it centered
 map("n", "n", "nzzzv", options)
