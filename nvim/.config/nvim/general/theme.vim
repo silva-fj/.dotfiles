@@ -10,7 +10,7 @@ let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 
 " [ Color Schemes - Themes ]
-colorscheme gruvbox
+" colorscheme gruvbox
 " colorscheme onedark
 " colorscheme nord
 " colorscheme dracula
@@ -33,8 +33,8 @@ colorscheme gruvbox
 " colorscheme OceanicNext
 
 " Vscode style
-" let g:vscode_style = "dark"
-" colorscheme vscode
+let g:vscode_style = "dark"
+colorscheme vscode
 
 " 
 " Nvcode Theme
