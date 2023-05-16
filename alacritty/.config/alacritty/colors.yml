@@ -105,7 +105,7 @@ schemes:
       magenta: '#d670d6'
       cyan:    '#29b8db'
       white:   '#e5e5e5'
-   
+
   gruvbox: &gruvbox
     primary:
       # hard contrast background - '#1d2021'
@@ -217,6 +217,61 @@ schemes:
       magenta: '0xa37acc'
       cyan: '0x63f2f1'
       white: '0x8a889d'
+
+  tokyo-night: &tokyo-night
+    # Default colors
+    primary:
+      background: '#1a1b26'
+      foreground: '#a9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '#32344a'
+      red:     '#f7768e'
+      green:   '#9ece6a'
+      yellow:  '#e0af68'
+      blue:    '#7aa2f7'
+      magenta: '#ad8ee6'
+      cyan:    '#449dab'
+      white:   '#787c99'
+
+    # Bright colors
+    bright:
+      black:   '#444b6a'
+      red:     '#ff7a93'
+      green:   '#b9f27c'
+      yellow:  '#ff9e64'
+      blue:    '#7da6ff'
+      magenta: '#bb9af7'
+      cyan:    '#0db9d7'
+      white:   '#acb0d0'
+
+  iterm: &iterm
+    primary:
+      background: '0x101421'
+      foreground: '0xfffbf6'
+
+    # Normal colors
+    normal:
+      black:   '0x2e2e2e'
+      red:     '0xeb4129'
+      green:   '0xabe047'
+      yellow:  '0xf6c744'
+      blue:    '0x47a0f3'
+      magenta: '0x7b5cb0'
+      cyan:    '0x64dbed'
+      white:   '0xe5e9f0'
+
+    # Bright colors
+    bright:
+      black:   '0x565656'
+      red:     '0xec5357'
+      green:   '0xc0e17d'
+      yellow:  '0xf9da6a'
+      blue:    '0x49a4f8'
+      magenta: '0xa47de9'
+      cyan:    '0x99faf2'
+      white:   '0xffffff'
 
 # Colors
 colors: *oceanic_next
