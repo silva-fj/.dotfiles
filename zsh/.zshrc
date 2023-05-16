@@ -54,6 +54,7 @@ alias android-emulator="$ANDROID_HOME/emulator/emulator"
 alias lg='lazygit'
 alias pn=pnpm
 
+export export KUBECONFIG=~/.kube/config KUBE_CONFIG_PATH=~/.kube/config
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Changes the ulimit limits.
