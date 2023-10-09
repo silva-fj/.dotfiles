@@ -274,4 +274,4 @@ schemes:
       white:   '0xffffff'
 
 # Colors
-colors: *oceanic_next
+colors: *iterm

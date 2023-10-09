@@ -6,7 +6,7 @@ import:
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 window:
   dimensions:
-    columns: 180
+    columns: 200
     lines: 60
 
 # If `true`, bold text is drawn using the bright color variants.
@@ -29,6 +29,7 @@ hints:
   alphabet: "jfkdls;ahgurieowpq"
 
 key_bindings:
+  - { key: N, mods: Command, action: SpawnNewInstance }
   - { key: V, mods: Command, action: Paste }
   - { key: C, mods: Command, action: Copy }
   - { key: Home, chars: "\x1b[H", mode: ~AppCursor }
