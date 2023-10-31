@@ -55,6 +55,9 @@ alias lg='lazygit'
 alias pn=pnpm
 
 export export KUBECONFIG=~/.kube/config KUBE_CONFIG_PATH=~/.kube/config
+
+alias k8s_auth="kops export kubecfg --admin --name=${KOPS_NAME}"
+
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Changes the ulimit limits.
