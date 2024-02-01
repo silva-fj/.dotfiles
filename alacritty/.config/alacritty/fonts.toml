@@ -1,0 +1,18 @@
+[font]
+size = 13
+
+[font.bold]
+family = "JetBrainsMonoNL NFP"
+
+[font.bold_italic]
+family = "JetBrainsMonoNL NFP"
+
+[font.italic]
+family = "JetBrainsMonoNL NFP"
+
+[font.normal]
+family = "JetBrainsMonoNL NFP"
+
+[font.offset]
+x = 0
+y = 0
