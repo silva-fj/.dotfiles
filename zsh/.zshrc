@@ -7,16 +7,10 @@ HIST_STAMPS="yyyy-mm-dd"
 export ZSH=$HOME/.oh-my-zsh
 
 plugins=(
-  git z zsh-autosuggestions zsh-nvm zsh-better-npm-completion zsh-syntax-highlighting aliases tmux dotenv
+  git z zsh-autosuggestions zsh-completions zsh-better-npm-completion zsh-syntax-highlighting aliases tmux dotenv fnm
 )
 
 source $ZSH/oh-my-zsh.sh
-
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    autoload -Uz compinit
-    compinit
-fi
 
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
   if [ -x "$(command -v nvr)" ]; then
@@ -28,12 +22,6 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# zsh-nvm config
-export NVM_DIR=~/.nvm
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-export NVM_AUTO_USE=true
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -49,6 +37,9 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
+# for solana
+PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+
 alias luamake=$HOME/.dotfiles/nvim/.config/nvim/lua-language-server/3rd/luamake/luamake
 alias android-emulator="$ANDROID_HOME/emulator/emulator"
 alias lg='lazygit'
@@ -59,9 +50,21 @@ export export KUBECONFIG=~/.kube/config KUBE_CONFIG_PATH=~/.kube/config
 alias k8s_auth="kops export kubecfg --admin --name=${KOPS_NAME}"
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 # Changes the ulimit limits.
 ulimit -n 10240     # Increase open files.
 ulimit -l unlimited # Increase max locked memory.
 
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/franjs/.bun/_bun" ] && source "/Users/franjs/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# fnm
+export PATH="/Users/franjs/Library/Application Support/fnm:$PATH"
+eval "`fnm env`"
