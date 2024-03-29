@@ -307,5 +307,5 @@ key = "Key8"
 mods = "Command"
 
 [window.dimensions]
-columns = 180
-lines = 55
+columns = 200
+lines = 60
