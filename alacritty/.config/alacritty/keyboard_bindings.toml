@@ -224,101 +224,101 @@ key = "Q"
 mods = "Control"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineCyclePrev
-# """
 chars = """
-:BufferPrevious
+:BufferLineCyclePrev
 """
+# chars = """
+# :BufferPrevious
+# """
 key = "Key9"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineCycleNext
-# """
 chars = """
-:BufferNext
+:BufferLineCycleNext
 """
+# chars = """
+# :BufferNext
+# """
 key = "Key0"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineGoToBuffer 1
-# """
 chars = """
-:BufferGoto 1
+:BufferLineGoToBuffer 1
 """
+# chars = """
+# :BufferGoto 1
+# """
 key = "Key1"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineGoToBuffer 2
-# """
 chars = """
-:BufferGoto 2
+:BufferLineGoToBuffer 2
 """
+# chars = """
+# :BufferGoto 2
+# """
 key = "Key2"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineGoToBuffer 3
-# """
 chars = """
-:BufferGoto 3
+:BufferLineGoToBuffer 3
 """
+# chars = """
+# :BufferGoto 3
+# """
 key = "Key3"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineGoToBuffer 4
-# """
 chars = """
-:BufferGoto 4
+:BufferLineGoToBuffer 4
 """
+# chars = """
+# :BufferGoto 4
+# """
 key = "Key4"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineGoToBuffer 5
-# """
 chars = """
-:BufferGoto 5
+:BufferLineGoToBuffer 5
 """
+# chars = """
+# :BufferGoto 5
+# """
 key = "Key5"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineGoToBuffer 6
-# """
 chars = """
-:BufferGoto 6
+:BufferLineGoToBuffer 6
 """
+# chars = """
+# :BufferGoto 6
+# """
 key = "Key6"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineGoToBuffer 7
-# """
 chars = """
-:BufferGoto 7
+:BufferLineGoToBuffer 7
 """
+# chars = """
+# :BufferGoto 7
+# """
 key = "Key7"
 mods = "Command"
 
 [[keyboard.bindings]]
-# chars = """
-# :BufferLineGoToBuffer 8
-# """
 chars = """
-:BufferGoto 8
+:BufferLineGoToBuffer 8
 """
+# chars = """
+# :BufferGoto 8
+# """
 key = "Key8"
 mods = "Command"

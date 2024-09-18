@@ -15,9 +15,10 @@ duration = 200
 draw_bold_text_with_bright_colors = true
 
 [window]
-dimensions = { columns = 220, lines = 65 }
-decorations = "Buttonless"
-padding = { x = 10, y = 10 }
+dimensions = { columns = 225, lines = 70 }
+# decorations = "Buttonless"
+# padding = { x = 10, y = 10 }
+decorations_theme_variant = "Dark"
 opacity = 0.8
 blur = true
 
